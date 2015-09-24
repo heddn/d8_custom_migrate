@@ -56,6 +56,6 @@ process:
   field_ip_address: ip_address
 
 # Required to cleanup CMI.
-migration_dependencies:
+dependencies:
   module:
     - custom_migrate
