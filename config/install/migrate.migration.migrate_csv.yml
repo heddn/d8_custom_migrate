@@ -57,5 +57,5 @@ process:
 
 # Required to cleanup CMI.
 migration_dependencies:
-  required:
+  module:
     - custom_migrate
