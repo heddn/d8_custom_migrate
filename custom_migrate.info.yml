@@ -1,0 +1,7 @@
+name: custom_migrate
+type: module
+description: Custom Migrate
+core: 8.x
+package: Migrate
+dependencies:
+  - migrate_source_csv
