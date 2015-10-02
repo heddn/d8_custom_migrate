@@ -48,7 +48,7 @@ process:
   # Most fields can be mapped directly - we just specify the destination (D8)
   # field and the corresponding field name from above, and the values will be
   # copied in.
-  title: id
+  title: first_last
   field_first_name: first_name
   field_last_name: last_name
   field_email: email
