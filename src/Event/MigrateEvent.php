@@ -7,9 +7,9 @@
 
 namespace Drupal\custom_migrate\Event;
 
-use Drupal\migrate_plus\Event\MigratePlusEvents;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Drupal\migrate_plus\Event\MigrateEvents;
 use Drupal\migrate_plus\Event\MigratePrepareRowEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class MigrateEvent implements EventSubscriberInterface {
 
@@ -17,7 +17,7 @@ class MigrateEvent implements EventSubscriberInterface {
    * {@inheritdoc}
    */
   static function getSubscribedEvents() {
-    $events[MigratePlusEvents::PREPARE_ROW][] = array('onPrepareRow', 0);
+    $events[MigrateEvents::PREPARE_ROW][] = array('onPrepareRow', 0);
     return $events;
   }
 
@@ -30,6 +30,6 @@ class MigrateEvent implements EventSubscriberInterface {
   public function onPrepareRow(MigratePrepareRowEvent $event) {
     $row = $event->getRow();
 
-    $row->setDestinationProperty('first_last', $row->getSourceProperty('first_name') . ' ' . $row->getSourceProperty('last_name'));
+    $row->setSourceProperty('first_last', $row->getSourceProperty('first_name') . ' ' . $row->getSourceProperty('last_name'));
   }
 }
