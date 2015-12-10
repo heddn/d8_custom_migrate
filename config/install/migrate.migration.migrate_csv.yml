@@ -12,7 +12,7 @@ source:
   # These are the field names from the source file representing the key
   # uniquely identifying each game - they will be stored in the migration
   # map table as columns sourceid1, sourceid2, and sourceid3.
-  identifiers:
+  keys:
     - id
   # Here we identify the columns of interest in the source file. Each numeric
   # key is the 0-based index of the column. For each column, the key below
