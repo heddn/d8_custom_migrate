@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fbd1d5ae3cc8305a8db2a992c83c5de7",
-    "content-hash": "099e63221703457115b705fb19564a29",
+    "hash": "98449429bf243c4d1bf1917c134efe40",
+    "content-hash": "fa9a29bd7f0cd0751d0f996f690cee1b",
     "packages": [
         {
             "name": "codegyre/robo",
@@ -834,6 +834,37 @@
                 "scalability"
             ],
             "time": "2016-02-26 15:31:24"
+        },
+        {
+            "name": "drupal/config_installer",
+            "version": "8.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/config_installer.git",
+                "reference": "5e23c37c3c723ace5d5bae3b0c0051172e4f3994"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_installer-8.x-1.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*"
+            },
+            "type": "drupal-profile",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Use configuration from another Drupal site to install a Drupal instance. Suitable for advanced users.",
+            "homepage": "https://www.drupal.org/project/config_installer",
+            "time": "2015-12-23 12:31:59"
         },
         {
             "name": "drupal/config_readonly",
