@@ -1,0 +1,10 @@
+uuid: 35f49850-42c2-4a5a-9b04-4ec5a7c0110c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: wKD4WsoV_wFgv2vgI4mcAAFSIzrye17ykzdwrnApkfY
+id: html_week
+label: 'HTML Week'
+locked: true
+pattern: Y-\WW

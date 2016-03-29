@@ -1,0 +1,27 @@
+# behat.yml
+
+default:
+  autoload:
+    '': %paths.base%/src
+  suites:
+    default:
+      contexts:
+        - Behat\MinkExtension\Context\MinkContext
+        - FeatureContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      base_url: http://localhost
+      selenium2: ~
+    Drupal\DrupalExtension:
+      blackbox: ~
+      text:
+        log_out: "Log out"
+        log_in: "Log in"
+        password_field: "Password"
+        username_field: "Username"
+      selectors:
+        logged_in_selector: "body.user-logged-in"
+        login_form_selector: "form#edit-name"
+  formatters:
+    pretty: true
