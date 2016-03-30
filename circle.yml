@@ -52,7 +52,8 @@ test:
         - mkdir -p /tmp/pjsdrivercache/phantomjs
     override:
         # Run phpunit tests.
-        - ./vendor/bin/phpunit -c web/core --exclude-group Composer
+        # Core phpunit takes too long...
+        #- ./vendor/bin/phpunit -c web/core --exclude-group Composer
 
         # Run PhantomJS
         - phantomjs --ssl-protocol=any --ignore-ssl-errors=true ./vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768 2>&1 > /tmp/gastonjs.log:
