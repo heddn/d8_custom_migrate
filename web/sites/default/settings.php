@@ -707,8 +707,9 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  * example.org, with all subdomains included.
  */
 $settings['trusted_host_patterns'] = [
-  '^.+\.local',
-  '^.+\.sandbox',
+  '^.+\.local$',
+  '^.+\.sandbox$',
+  '^localhost$',
 ];
 
 // Disable config changes in managed environments.

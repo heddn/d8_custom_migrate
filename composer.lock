@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "98449429bf243c4d1bf1917c134efe40",
-    "content-hash": "fa9a29bd7f0cd0751d0f996f690cee1b",
+    "hash": "02dbfafaa95d1adbe5c9cb7042f3df8f",
+    "content-hash": "29f9dc176e918eba9498109b011b29bf",
     "packages": [
         {
             "name": "codegyre/robo",
@@ -5184,6 +5184,59 @@
                 "webtest"
             ],
             "time": "2015-06-15 20:19:33"
+        },
+        {
+            "name": "jcalderonzumba/behat-phantomjs-extension",
+            "version": "v0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jcalderonzumba/MinkPhantomJSExtension.git",
+                "reference": "f73d9366b1d082e557cbafc1e1891b9257d8f525"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jcalderonzumba/MinkPhantomJSExtension/zipball/f73d9366b1d082e557cbafc1e1891b9257d8f525",
+                "reference": "f73d9366b1d082e557cbafc1e1891b9257d8f525",
+                "shasum": ""
+            },
+            "require": {
+                "behat/mink-extension": "~2.0",
+                "jcalderonzumba/mink-phantomjs-driver": "~0.3",
+                "php": ">=5.4"
+            },
+            "type": "behat-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zumba\\PhantomJSExtension\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Juan Francisco Calderón Zumba",
+                    "email": "juanfcz@gmail.com",
+                    "homepage": "http://github.com/jcalderonzumba"
+                }
+            ],
+            "description": "PhantomJS Mink Behat extension for Phantomjs Mink driver",
+            "homepage": "https://github.com/jcalderonzumba/MinkPhantomJSExtension",
+            "keywords": [
+                "ajax",
+                "browser",
+                "headless",
+                "javascript",
+                "phantomjs",
+                "testing"
+            ],
+            "time": "2016-01-10 09:53:55"
         },
         {
             "name": "jcalderonzumba/gastonjs",
