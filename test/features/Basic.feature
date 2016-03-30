@@ -8,5 +8,5 @@ Feature: Homepage
 
   Scenario: Check the admin page access denied.
     Given I am an anonymous user
-    When I visit "admin"
+    When I am on "admin"
     Then the response status code should be 403

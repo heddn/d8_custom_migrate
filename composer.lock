@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fbd1d5ae3cc8305a8db2a992c83c5de7",
-    "content-hash": "099e63221703457115b705fb19564a29",
+    "hash": "02dbfafaa95d1adbe5c9cb7042f3df8f",
+    "content-hash": "29f9dc176e918eba9498109b011b29bf",
     "packages": [
         {
             "name": "codegyre/robo",
@@ -834,6 +834,37 @@
                 "scalability"
             ],
             "time": "2016-02-26 15:31:24"
+        },
+        {
+            "name": "drupal/config_installer",
+            "version": "8.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/config_installer.git",
+                "reference": "5e23c37c3c723ace5d5bae3b0c0051172e4f3994"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_installer-8.x-1.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*"
+            },
+            "type": "drupal-profile",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Use configuration from another Drupal site to install a Drupal instance. Suitable for advanced users.",
+            "homepage": "https://www.drupal.org/project/config_installer",
+            "time": "2015-12-23 12:31:59"
         },
         {
             "name": "drupal/config_readonly",
@@ -5153,6 +5184,59 @@
                 "webtest"
             ],
             "time": "2015-06-15 20:19:33"
+        },
+        {
+            "name": "jcalderonzumba/behat-phantomjs-extension",
+            "version": "v0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jcalderonzumba/MinkPhantomJSExtension.git",
+                "reference": "f73d9366b1d082e557cbafc1e1891b9257d8f525"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jcalderonzumba/MinkPhantomJSExtension/zipball/f73d9366b1d082e557cbafc1e1891b9257d8f525",
+                "reference": "f73d9366b1d082e557cbafc1e1891b9257d8f525",
+                "shasum": ""
+            },
+            "require": {
+                "behat/mink-extension": "~2.0",
+                "jcalderonzumba/mink-phantomjs-driver": "~0.3",
+                "php": ">=5.4"
+            },
+            "type": "behat-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zumba\\PhantomJSExtension\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Juan Francisco Calderón Zumba",
+                    "email": "juanfcz@gmail.com",
+                    "homepage": "http://github.com/jcalderonzumba"
+                }
+            ],
+            "description": "PhantomJS Mink Behat extension for Phantomjs Mink driver",
+            "homepage": "https://github.com/jcalderonzumba/MinkPhantomJSExtension",
+            "keywords": [
+                "ajax",
+                "browser",
+                "headless",
+                "javascript",
+                "phantomjs",
+                "testing"
+            ],
+            "time": "2016-01-10 09:53:55"
         },
         {
             "name": "jcalderonzumba/gastonjs",
