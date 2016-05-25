@@ -1,0 +1,18 @@
+cdn_provider: ''
+_core:
+  default_config_hash: _5qrDuRmWmRVjW00si3U1s1NrgrocA4N653EYGRfgEE
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://d8_starter.local/themes/contrib/bootstrap/favicon.ico'
+  use_default: true
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  path: ''
+  url: ''
+  use_default: true
+schema: 8000

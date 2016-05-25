@@ -1,4 +1,4 @@
-uuid: ef68fd82-cd21-4f62-9d00-aec9250bf0a2
+uuid: 2a25d2a5-5dcd-4b0b-b388-953c97ee2625
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: z8XxeJ_VN7B0PugrC1Xgj-FubvoLSKgnFJJ3DbXlAmA
+  default_config_hash: YIwhIF9MSP1E_HMam6MrYeti_UqMXQiLDMjDsPFKK8s
 id: content
 label: Content
 module: node
@@ -184,7 +184,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Content Type'
+          label: 'Content type'
           exclude: false
           alter:
             alter_text: false
@@ -424,7 +424,7 @@ display:
           exposed: true
           expose:
             operator_id: type_op
-            label: Type
+            label: 'Content type'
             description: ''
             use_operator: false
             operator: type_op
