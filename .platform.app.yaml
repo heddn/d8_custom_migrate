@@ -1,0 +1,94 @@
+# This file describes an application. You can have multiple applications
+# in the same project.
+
+# The name of this app. Must be unique within a project.
+name: drupal
+
+# The runtime the application uses.
+type: "php:7.0"
+
+# Configuration of the build of this application.
+build:
+    flavor: drupal
+
+access:
+    ssh: admin
+
+# The relationships of the application with services or other applications.
+# The left-hand side is the name of the relationship as it will be exposed
+# to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
+# side is in the form `<service name>:<endpoint name>`.
+relationships:
+    database: "mysql:mysql"
+    database_d6: "drupal6:mysql"
+#    solr: "solr:solr"
+#    redis: "redis:redis"
+
+# The configuration of app when it is exposed to the web.
+web:
+    # Specific parameters for different URL prefixes.
+    locations:
+        "/":
+            # The folder to serve static assets for this location from.
+            # (Relative to the application root.)
+            root: "web"
+
+            # How long to allow static assets from this location to be cached.
+            # (Can be a time or -1 for no caching. Times can be suffixed with
+            # "ms" (milliseconds), "s" (seconds), "m" (minutes), "h" (hours),
+            # "d" (days), "w" (weeks), "M" (months, 30d) or "y" (years, 365d).)
+            expires: -1
+
+            # Whether to forward disallowed and missing resources from this
+            # location to the application.
+            # (Can be true, false or a URI path string.)
+            passthru: "/index.php"
+
+# The size of the persistent disk of the application (in MB).
+disk: 1596
+
+# The mounts that will be performed when the package is deployed.
+mounts:
+    "/web/sites/default/files": "shared:files/files"
+    "/tmp": "shared:files/tmp"
+    "/private": "shared:files/private"
+    "/drush-backups": "shared:files/drush-backups"
+
+dependencies:
+  php:
+    drush/drush: "~8"
+  nodejs:
+    less: "~2"
+    less-plugin-clean-css: "~1"
+
+# The hooks executed at various points in the lifecycle of the application.
+hooks:
+    build: |
+        mkdir ~/bin
+        cd ~/bin
+        php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+        php composer-setup.php --install-dir ~/bin
+        mv composer.phar composer
+        chmod 755 composer
+        php -r "unlink('composer-setup.php');"
+        ~/bin/composer global require "hirak/prestissimo:^0.2"
+        cd ~
+        ~/bin/composer install
+        cd web/themes/custom/libre_custom_theme
+        npm install
+        node_modules/gulp-cli/bin/gulp.js minify-css
+
+    deploy: |
+        date
+        # mysql -h database.internal -u user main < ~/libreD8.sql
+        zcat ~/libreD6.sql.gz |mysql -h database_d6.internal -u user main
+        cd ~/web
+        ../vendor/bin/drush cim -y
+        ../vendor/bin/drush updb -y
+        ../vendor/bin/drush cr
+
+# The configuration of scheduled execution.
+crons:
+    drupal:
+        spec: "*/20 * * * *"
+        cmd: "cd public ; drush core-cron"
