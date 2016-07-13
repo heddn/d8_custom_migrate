@@ -20,12 +20,3 @@ fi
 
 # Install drupal.
 chmod 644 ./web/sites/default/settings.php
-mysql -u drupal --password=drupal drupal < ./libreD8.sql
-
-# Create D6 db for migrations
-zcat libreD6.sql.gz |mysql -u drupal6 --password=drupal6 drupal6
-
-# Compile CSS
-cd web/themes/custom/libre_custom_theme
-npm install
-node_modules/gulp-cli/bin/gulp.js less

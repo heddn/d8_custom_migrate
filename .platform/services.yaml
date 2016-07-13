@@ -6,9 +6,6 @@
 mysql:
     type: "mysql:10.0"
     disk: 1250
-drupal6:
-    type: "mysql:10.0"
-    disk: 1250
 #
 #redis:
 #    type: "redis:3.0"
