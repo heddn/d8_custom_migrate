@@ -57,11 +57,26 @@ dependencies:
   php:
     drush/drush: "~8"
   nodejs:
-    less: "~2"
-    less-plugin-clean-css: "~1"
+
+# The hooks executed at various points in the lifecycle of the application.
+hooks:
+    build: |
+        composer global require "hirak/prestissimo:^0.2"
+        composer install
+        # cd web/themes/custom/custom_theme
+        # npm install
+        # node_modules/gulp-cli/bin/gulp.js
+
+    deploy: |
+        date
+        cd ~/web
+        ../vendor/bin/drush si config_installer -y
+        ../vendor/bin/drush cim -y
+        ../vendor/bin/drush updb -y
+        ../vendor/bin/drush cr
 
 # The configuration of scheduled execution.
 crons:
     drupal:
         spec: "*/20 * * * *"
-        cmd: "cd public ; drush core-cron"
+        cmd: "cd web ; ../vendor/bin/drush core-cron"
