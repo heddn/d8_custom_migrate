@@ -246,7 +246,7 @@
  */
 
 $config_directories = array(
-  CONFIG_SYNC_DIRECTORY => '../config',
+  CONFIG_SYNC_DIRECTORY => '../config/sync',
 );
 
 /**
@@ -269,7 +269,7 @@ $config_directories = array(
  *
  * @see install_select_profile()
  */
-$settings['install_profile'] = 'standard';
+$settings['install_profile'] = 'config_installer';
 
 /**
  * Salt for one-time login links, cancel links, form tokens, etc.
@@ -707,13 +707,11 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  * example.org, with all subdomains included.
  */
 $settings['trusted_host_patterns'] = [
+  '^.+\.dev',
   '^.+\.local$',
   '^.+\.sandbox$',
   '^localhost$',
 ];
-
-// Disable config changes in managed environments.
-$settings['config_readonly'] = TRUE;
 
 /**
  * Load local development override configuration, if available.

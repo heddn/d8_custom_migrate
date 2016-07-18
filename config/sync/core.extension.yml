@@ -42,13 +42,11 @@ module:
   views_ui: 0
   menu_link_content: 1
   views: 10
-  standard: 1000
+  config_installer: 1000
 theme:
   stable: 0
   classy: 0
   bartik: 0
   seven: 0
-  bootstrap: 0
-  sub_bootstrap: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
