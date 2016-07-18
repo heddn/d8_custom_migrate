@@ -16,3 +16,4 @@ web/sites/default/settings.local.php
 
 # Ignore vagrant
 .vagrant
+Vagrantfile.local
