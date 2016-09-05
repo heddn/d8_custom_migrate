@@ -1,159 +1,170 @@
 {
-    "name": "MTechLLC/drupal-8",
-    "description": "Basic Drupal 8 Install",
-    "type": "project",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "web/modules/custom/*"
-        },
-        {
-            "type"    : "package",
-            "package" : {
-                "name"    : "enyo/dropzone",
-                "version" : "dev-master",
-                "type"    : "drupal-library",
-                "source"  : {
-                    "url"       : "https://github.com/enyo/dropzone.git",
-                    "type"      : "git",
-                    "reference" : "origin/master"
-                }
-            }
-        },
-        {
-            "type"    : "package",
-            "package" : {
-                "name"    : "desandro/imagesloaded",
-                "version" : "dev-master",
-                "type"    : "drupal-library",
-                "source"  : {
-                    "url"       : "https://github.com/desandro/imagesloaded.git",
-                    "type"      : "git",
-                    "reference" : "origin/master"
-                }
-            }
-        },
-        {
-            "type"    : "package",
-            "package" : {
-                "name"    : "desandro/masonry",
-                "version" : "dev-master",
-                "type"    : "drupal-library",
-                "source"  : {
-                    "url"       : "https://github.com/desandro/masonry.git",
-                    "type"      : "git",
-                    "reference" : "origin/master"
-                }
-            }
-        },
-        {
-            "type"    : "package",
-            "package" : {
-                "name"    : "jackmoore/colorbox",
-                "version" : "dev-master",
-                "type"    : "drupal-library",
-                "source"  : {
-                    "url"       : "https://github.com/jackmoore/colorbox",
-                    "type"      : "git",
-                    "reference" : "origin/master"
-                }
-            }
-        },
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "composer",
-            "url": "https://packagist.drupal-composer.org"
+  "name": "MTechLLC/drupal-8",
+  "description": "Basic Drupal 8 Install",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "path",
+      "url": "web/modules/custom/*"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "enyo/dropzone",
+        "version": "dev-master",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/enyo/dropzone.git",
+          "type": "git",
+          "reference": "origin/master"
         }
-    ],
-    "require": {
-        "composer/installers": "~1",
-        "drupal-composer/drupal-scaffold": "~1",
-        "cweagans/composer-patches": "~1.0",
-        "geerlingguy/drupal-vm": "dev-master",
-        "drupal/core": "~8",
-        "drush/drush": "~8",
-        "drush/config-extra": "~1",
-        "desandro/masonry": "*",
-        "desandro/imagesloaded": "*",
-        "enyo/dropzone": "*",
-        "jackmoore/colorbox": "*",
-        "drupal/console": "~1",
-        "drupal/admin_toolbar": "~1",
-        "drupal/config_installer": "~8",
-        "drupal/migrate_plus": "2.x-dev",
-        "drupal/migrate_tools": "~2",
-        "drupal/pathauto": "~1",
-        "drupal/audiofield": "~1",
-        "drupal/video_embed_field": "~1",
-        "drupal/entity_browser": "1.x-dev",
-        "drupal/inline_entity_form": "1.x-dev",
-        "drupal/file_browser": "1.x-dev",
-        "drupal/video_embed_vidyard": "1.0-rc1",
-        "drupal/media_entity_audio": "1.x-dev",
-        "drupal/google_analytics": "~2",
-        "drupal/simple_sitemap": "2.x-dev",
-        "drupal/ng_lightbox": "~1",
-        "drupal/twig_tweak": "~1"
+      }
     },
-    "require-dev": {
-        "behat/behat": "~3.0",
-        "behat/mink-extension": "~2.2",
-        "behat/mink-selenium2-driver": "~1.3",
-        "behat/mink-goutte-driver": "~1.2",
-        "drupal/drupal-extension": "~3.1",
-        "phpunit/phpunit": "~4",
-        "jcalderonzumba/gastonjs": "^1.1@dev",
-        "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
-        "mikey179/vfsStream": "~1.2",
-        "symfony/css-selector": "2.7.*",
-        "jcalderonzumba/behat-phantomjs-extension": "^0.1.3"
-    },
-    "conflict": {
-        "drupal/drupal": "*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ]
-    },
-    "scripts": {
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::buildScaffold",
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::buildScaffold",
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
-    },
-    "extra": {
-        "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/contrib/{$name}": ["type:drupal-drush"],
-            "web/libraries/{$name}" : ["type:drupal-library"]
-        },
-        "patches": {
-            "drupal/core": {
-                "Resurrect the 'preserve_files' configuration option in file migration": "https://www.drupal.org/files/issues/file_migrations_preserve_files-2706405-2.patch",
-                "Menu_links migration is not working because option parameters were not found" : "https://www.drupal.org/files/issues/d6_7_d8_migration-2707387-12.patch",
-                "List missing dependencies": "https://www.drupal.org/files/issues/call_to_a_member-2608408-28.patch",
-                "Staging directory should not have to be writeable": "https://www.drupal.org/files/issues/2466197-59.patch"
-            },
-            "drupal/migrate_plus": {
-                "Migrate Skip on Value (or non Value)" : "https://www.drupal.org/files/issues/migrate_plus-migrate_skip_on_value-2711949-6.patch"
-            },
-            "drupal/migrate_tools": {
-                "Allow running migrations filtered by a specific tag": "https://www.drupal.org/files/issues/drush_option_tag-2711133-3-for_8.2.x.patch"
-            }
+    {
+      "type": "package",
+      "package": {
+        "name": "desandro/imagesloaded",
+        "version": "dev-master",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/desandro/imagesloaded.git",
+          "type": "git",
+          "reference": "origin/master"
         }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "desandro/masonry",
+        "version": "dev-master",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/desandro/masonry.git",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "jackmoore/colorbox",
+        "version": "dev-master",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/jackmoore/colorbox",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "composer",
+      "url": "https://packagist.drupal-composer.org"
     }
+  ],
+  "require": {
+    "composer/installers": "~1",
+    "cweagans/composer-patches": "~1.0",
+    "desandro/imagesloaded": "*",
+    "desandro/masonry": "*",
+    "drupal-composer/drupal-scaffold": "~1",
+    "drupal/admin_toolbar": "~1",
+    "drupal/audiofield": "~1",
+    "drupal/bootstrap": "~3",
+    "drupal/config_installer": "~8",
+    "drupal/console": "~1",
+    "drupal/core": "~8",
+    "drupal/entity_browser": "1.x-dev",
+    "drupal/file_browser": "1.x-dev",
+    "drupal/google_analytics": "~2",
+    "drupal/inline_entity_form": "1.x-dev",
+    "drupal/media_entity_audio": "1.x-dev",
+    "drupal/migrate_plus": "2.x-dev",
+    "drupal/migrate_tools": "~2",
+    "drupal/ng_lightbox": "~1",
+    "drupal/pathauto": "~1",
+    "drupal/simple_sitemap": "2.x-dev",
+    "drupal/twig_tweak": "~1",
+    "drupal/video_embed_field": "~1",
+    "drupal/video_embed_vidyard": "1.0-rc1",
+    "drush/config-extra": "~1",
+    "drush/drush": "~8",
+    "enyo/dropzone": "*",
+    "geerlingguy/drupal-vm": "dev-master",
+    "jackmoore/colorbox": "*"
+  },
+  "require-dev": {
+    "behat/behat": "~3.0",
+    "behat/mink-extension": "~2.2",
+    "behat/mink-goutte-driver": "~1.2",
+    "behat/mink-selenium2-driver": "~1.3",
+    "drupal/drupal-extension": "~3.1",
+    "jcalderonzumba/behat-phantomjs-extension": "^0.1.3",
+    "jcalderonzumba/gastonjs": "^1.1@dev",
+    "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
+    "mikey179/vfsStream": "~1.2",
+    "phpunit/phpunit": "~4",
+    "symfony/css-selector": "2.7.*"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "classmap": [
+      "scripts/composer/ScriptHandler.php"
+    ]
+  },
+  "scripts": {
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "post-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::buildScaffold",
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::buildScaffold",
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ]
+  },
+  "extra": {
+    "installer-paths": {
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "drush/contrib/{$name}": [
+        "type:drupal-drush"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library"
+      ]
+    },
+    "patches": {
+      "drupal/core": {
+        "Menu_links migration is not working because option parameters were not found": "https://www.drupal.org/files/issues/d6_7_d8_migration-2707387-24.patch",
+        "List missing dependencies": "https://www.drupal.org/files/issues/call_to_a_member-2608408-34_0.patch"
+      },
+      "drupal/migrate_plus": {
+        "Migrate Skip on Value (or non Value)": "https://www.drupal.org/files/issues/migrate_plus-migrate_skip_on_value-2711949-6.patch"
+      },
+      "drupal/migrate_tools": {
+        "Allow running migrations filtered by a specific tag": "https://www.drupal.org/files/issues/drush_option_tag-2711133-10-for_8.2.x.patch"
+      }
+    }
+  }
 }
