@@ -112,7 +112,7 @@
     "phpunit/phpunit": "~4",
     "symfony/css-selector": "2.7.*"
   },
-  "conflict": {
+  "replace": {
     "drupal/drupal": "*"
   },
   "minimum-stability": "dev",
@@ -157,7 +157,8 @@
     "patches": {
       "drupal/core": {
         "Menu_links migration is not working because option parameters were not found": "https://www.drupal.org/files/issues/d6_7_d8_migration-2707387-24.patch",
-        "List missing dependencies": "https://www.drupal.org/files/issues/call_to_a_member-2608408-34_0.patch"
+        "List missing dependencies": "https://www.drupal.org/files/issues/call_to_a_member-2608408-34_0.patch",
+        "Redirect to install.php on empty DB": "https://www.drupal.org/files/issues/drupal-redirect_to_install-728702-92.patch"
       },
       "drupal/migrate_plus": {
         "Migrate Skip on Value (or non Value)": "https://www.drupal.org/files/issues/migrate_plus-migrate_skip_on_value-2711949-6.patch"

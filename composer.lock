@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8c7db0870892274b2d10195da9a19405",
-    "content-hash": "bc9bec054b88e6f67c34531a2d560d9e",
+    "hash": "318272ceeb927612cbd409e71f0a3516",
+    "content-hash": "60c80a5dd66307f4d4b6eea68622db2a",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1413,7 +1413,8 @@
             "extra": {
                 "patches_applied": {
                     "Menu_links migration is not working because option parameters were not found": "https://www.drupal.org/files/issues/d6_7_d8_migration-2707387-24.patch",
-                    "List missing dependencies": "https://www.drupal.org/files/issues/call_to_a_member-2608408-34_0.patch"
+                    "List missing dependencies": "https://www.drupal.org/files/issues/call_to_a_member-2608408-34_0.patch",
+                    "Redirect to install.php on empty DB": "https://www.drupal.org/files/issues/drupal-redirect_to_install-728702-92.patch"
                 }
             },
             "autoload": {
