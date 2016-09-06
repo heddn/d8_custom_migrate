@@ -5,7 +5,7 @@
 
 "http://{default}/":
     type: upstream
-    upstream: "drupal:php"
+    upstream: "php:http"
 
 "http://www.{default}/":
     type: redirect

@@ -713,6 +713,18 @@ $settings['trusted_host_patterns'] = [
   '^localhost$',
 ];
 
+// Install with the 'config_installer' profile for this example.
+//
+// As the settings.php file is not writable during install on Platform.sh (for
+// good reasons), Drupal will refuse to install a profile that is not defined
+// here.
+$settings['install_profile'] = 'config_installer';
+
+// Automatic Platform.sh settings.
+if (file_exists(__DIR__ . '/settings.platformsh.php')) {
+  include __DIR__ . '/settings.platformsh.php';
+}
+
 /**
  * Load local development override configuration, if available.
  *
