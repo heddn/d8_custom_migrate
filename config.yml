@@ -252,7 +252,7 @@ composer_global_packages:
 # the `provisioning/playbook.yml` file.
 pre_provision_scripts: []
 post_provision_scripts:
-  - "{{ config_dir }}/scripts/post-provision.sh"
+  - "{{ config_dir }}/scripts/drupalvm/post-provision.sh"
 
 # MySQL Configuration.
 mysql_root_password: root

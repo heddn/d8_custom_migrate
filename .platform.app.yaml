@@ -5,7 +5,7 @@
 name: drupal
 
 # The runtime the application uses.
-type: "php:7.0"
+type: 'php:7.0'
 
 # Configuration of the build of this application.
 build:
@@ -19,18 +19,18 @@ access:
 # to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
-    database: "mysql:mysql"
-#    solr: "solr:solr"
-#    redis: "redis:redis"
+    database: 'mysql:mysql'
+#    solr: 'solr:solr'
+#    redis: 'redis:redis'
 
 # The configuration of app when it is exposed to the web.
 web:
     # Specific parameters for different URL prefixes.
     locations:
-        "/":
+        '/':
             # The folder to serve static assets for this location from.
             # (Relative to the application root.)
-            root: "web"
+            root: 'web'
 
             # How long to allow static assets from this location to be cached.
             # (Can be a time or -1 for no caching. Times can be suffixed with
@@ -41,27 +41,27 @@ web:
             # Whether to forward disallowed and missing resources from this
             # location to the application.
             # (Can be true, false or a URI path string.)
-            passthru: "/index.php"
+            passthru: '/index.php'
 
 # The size of the persistent disk of the application (in MB).
-disk: 1596
+disk: 2048
 
 # The mounts that will be performed when the package is deployed.
 mounts:
-    "/web/sites/default/files": "shared:files/files"
-    "/tmp": "shared:files/tmp"
-    "/private": "shared:files/private"
-    "/drush-backups": "shared:files/drush-backups"
+    '/web/sites/default/files': 'shared:files/files'
+    '/tmp': 'shared:files/tmp'
+    '/private': 'shared:files/private'
+    '/drush-backups': 'shared:files/drush-backups'
 
 dependencies:
   php:
-    drush/drush: "~8"
+    drush/drush: '~8'
+    hirak/prestissimo: '^0.3'
   nodejs:
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
     build: |
-        composer global require "hirak/prestissimo:^0.2"
         composer install
         # cd web/themes/custom/custom_theme
         # npm install
@@ -70,13 +70,13 @@ hooks:
     deploy: |
         date
         cd ~/web
-        ../vendor/bin/drush si config_installer -y
-        ../vendor/bin/drush cim -y
-        ../vendor/bin/drush updb -y
-        ../vendor/bin/drush cr
+        drush si config_installer -y
+        drush cim -y
+        drush updb -y
+        drush cr
 
 # The configuration of scheduled execution.
 crons:
     drupal:
-        spec: "*/20 * * * *"
-        cmd: "cd web ; ../vendor/bin/drush core-cron"
+        spec: '*/20 * * * *'
+        cmd: 'cd web; drush core-cron'
