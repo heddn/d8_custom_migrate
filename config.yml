@@ -7,8 +7,8 @@ vagrant_synced_folder_default_type: nfs
 
 # If you need to run multiple instances of Drupal VM, set a unique hostname,
 # machine name, and IP address for each instance.
-vagrant_hostname: drupalvm.dev
-vagrant_machine_name: drupalvm
+vagrant_hostname: d8_starter.dev
+vagrant_machine_name: d8_starter
 vagrant_ip: 0.0.0.0
 
 # Allow Drupal VM to be accessed via a public network interface on your host.
@@ -51,7 +51,7 @@ drupal_composer_dependencies: []
 # are using Composer's create-project as a site deployment strategy.
 build_composer_project: false
 drupal_composer_project_package: "drupal-composer/drupal-project:8.x-dev"
-drupal_composer_project_options: "--prefer-dist --stability dev --no-interaction"
+drupal_composer_project_options: "-o --prefer-dist --stability dev --no-interaction"
 
 # Set this to 'false' if you don't need to install drupal (using the drupal_*
 # settings below), but instead copy down a database (e.g. using drush sql-sync).
@@ -180,11 +180,12 @@ installed_extras:
   - adminer
   # - blackfire
   - drupalconsole
+  # - elasticsearch
   - mailhog
   # - memcached
   # - newrelic
   - nodejs
-  - pimpmylog
+  # - pimpmylog
   # - redis
   # - ruby
   # - selenium
@@ -202,7 +203,7 @@ extra_security_enabled: false
 
 drush_version: "master"
 drush_keep_updated: true
-drush_composer_cli_options: "--prefer-dist --no-interaction"
+drush_composer_cli_options: "-o --no-dev --prefer-dist --no-interaction"
 
 firewall_allowed_tcp_ports:
   - "22"
@@ -220,7 +221,7 @@ firewall_log_dropped_packets: false
 # PHP Configuration. Currently-supported versions: 5.6, 7.0.
 # To use 5.6, see: http://docs.drupalvm.com/en/latest/other/php-56/
 php_version: "7.0"
-php_memory_limit: "192M"
+php_memory_limit: "256M"
 php_display_errors: "On"
 php_display_startup_errors: "On"
 php_realpath_cache_size: "1024K"
@@ -284,7 +285,7 @@ pimpmylog_install_dir: /usr/share/php/pimpmylog
 pimpmylog_grant_all_privs: true
 
 # XDebug configuration. XDebug is disabled by default for better performance.
-php_xdebug_default_enable: 0
+php_xdebug_default_enable: 1
 php_xdebug_coverage_enable: 0
 php_xdebug_cli_enable: 0
 php_xdebug_remote_enable: 1
@@ -300,7 +301,7 @@ solr_xms: "64M"
 solr_xmx: "128M"
 
 # Selenium configuration.
-selenium_version: 2.46.0
+selenium_version: 2.53.0
 
 # Other configuration.
 dashboard_install_dir: /var/www/dashboard
