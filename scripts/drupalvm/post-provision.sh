@@ -10,6 +10,7 @@ else
 fi
 
 # Provide default settings for running locally.
+sudo chmod +w ./web/sites/default
 if [ ! -f ./web/sites/default/settings.local.php ]
 then
   cp ./scripts/drupalvm/default.settings.local.php ./web/sites/default/settings.local.php
