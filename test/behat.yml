@@ -1,0 +1,27 @@
+# behat.yml
+
+default:
+  autoload:
+    '': %paths.base%/src
+  suites:
+    default:
+      contexts:
+        - Behat\MinkExtension\Context\MinkContext
+        - FeatureContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      base_url: http://localhost:8080
+      phantomjs:
+          phantom_server: "http://localhost:8510/api"
+          template_cache: "/tmp/pjsdrivercache/phantomjs"
+    Zumba\PhantomJSExtension:
+    Drupal\DrupalExtension:
+      blackbox: ~
+      text:
+        log_out: "Log out"
+        log_in: "Log in"
+        password_field: "Password"
+        username_field: "Username"
+  formatters:
+    pretty: true

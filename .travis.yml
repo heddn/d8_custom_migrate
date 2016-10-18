@@ -1,0 +1,24 @@
+language: php
+php:
+  - 5.6
+  - 7.0
+matrix:
+  fast_finish: true
+addons:
+  hosts:
+    - localhost
+cache:
+  directories:
+    - ${HOME}/.composer/cache
+    # This is where vendor/ backups will be stored.
+    - ${HOME}/vendor-cache/
+git:
+  depth: 3
+before_install: ${TRAVIS_BUILD_DIR}/build/travis/before_install.sh
+install: ${TRAVIS_BUILD_DIR}/build/travis/install.sh
+script: ${TRAVIS_BUILD_DIR}/build/travis/script.sh
+before_cache: ${TRAVIS_BUILD_DIR}/build/travis/before_cache.sh
+notifications:
+  slack:
+    secure: T9QQJpdmwMYHZCIRrko44u6W1q0qyE91Mu+Gwt1bK1FmGOnmwnhddU0eiAIbJ58GGuVBdlM5BwY2qXSvWvNUymt52n1mNkz222AS+vNrk/SS5B2I3BPMLCSzuL77siZN1xPBXAlKpAHt/CX+4G1A1uPudSFb5mwij1Vc1bSp6mPqOto+En+UGnUUx+ioj/83gxosbmukWgUki5IBNsww7FXLPbGG7ArIBAKNdy4+9azwmjH2qlDtOwKhhZH6zhIU5f7NdJSQx4R/sJbpzODee0aXhySWdl3ezXZMEJ9SoaNdghJsnDAJJFEwKvNpjZ/ejKjMKUn5UrhI/2Y3CVl+ZvC8oG63EN8eg6h0WPlliULswA0y63AGu/2KcNHOBsKbW9GigeqTExOwFdhUVVEWahwkT4ED42pUoOJ4pR6I74ygRnFitMOAwdr0eqYpBW20Wn7+9zW0KS8VzxMQROamNRYb8iyhW4AegMcqVpO/bcXtobk95ozcDSp5U0XY6vKZ7zY9eDLy+TyYqETGs841EyL+gXNXsihyHxm1hL1Bn4CEfwd4eo5gCeR8v3lK4avuWB8mRju41QTpm+50QuL50Bq13EPluzj/1KUuVTmAsc17ZSePtiHSiQcv0NGgIKkQIxVqni3BzoMjTGz7E9U4zOL66UNGHmREWCywgFN4oBw=
+    on_success: always
