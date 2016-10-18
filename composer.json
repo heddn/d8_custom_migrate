@@ -62,10 +62,6 @@
     {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-    },
-    {
-      "type": "composer",
-      "url": "https://packagist.drupal-composer.org"
     }
   ],
   "require": {
@@ -77,7 +73,7 @@
     "drupal/admin_toolbar": "~1",
     "drupal/audiofield": "~1",
     "drupal/bootstrap": "~3",
-    "drupal/config_installer": "~8",
+    "drupal/config_installer": "~1",
     "drupal/console": "~1",
     "drupal/core": "~8",
     "drupal/entity_browser": "1.x-dev",
@@ -85,8 +81,8 @@
     "drupal/google_analytics": "~2",
     "drupal/inline_entity_form": "1.x-dev",
     "drupal/media_entity_audio": "1.x-dev",
-    "drupal/migrate_plus": "2.x-dev",
-    "drupal/migrate_tools": "~2",
+    "drupal/migrate_plus": "~3",
+    "drupal/migrate_tools": "~3",
     "drupal/ng_lightbox": "~1",
     "drupal/pathauto": "~1",
     "drupal/simple_sitemap": "2.x-dev",
@@ -159,12 +155,6 @@
         "Menu_links migration is not working because option parameters were not found": "https://www.drupal.org/files/issues/d6_7_d8_migration-2707387-24.patch",
         "List missing dependencies": "https://www.drupal.org/files/issues/call_to_a_member-2608408-34_0.patch",
         "Redirect to install.php on empty DB": "https://www.drupal.org/files/issues/drupal-redirect_to_install-728702-92.patch"
-      },
-      "drupal/migrate_plus": {
-        "Migrate Skip on Value (or non Value)": "https://www.drupal.org/files/issues/migrate_plus-migrate_skip_on_value-2711949-6.patch"
-      },
-      "drupal/migrate_tools": {
-        "Allow running migrations filtered by a specific tag": "https://www.drupal.org/files/issues/drush_option_tag-2711133-10-for_8.2.x.patch"
       }
     }
   }

@@ -10,3 +10,5 @@ recipients:
   - admin@example.com
 reply: ''
 weight: 0
+message: null
+redirect: null
