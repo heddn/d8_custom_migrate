@@ -1,0 +1,29 @@
+uuid: 5bd7f332-1649-4530-b25c-d996b4eb66a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.people.field_country
+    - field.field.node.people.field_dob
+    - field.field.node.people.field_email
+    - field.field.node.people.field_first_name
+    - field.field.node.people.field_ip_address
+    - field.field.node.people.field_last_name
+    - node.type.people
+  module:
+    - user
+id: node.people.teaser
+targetEntityType: node
+bundle: people
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_country: true
+  field_dob: true
+  field_email: true
+  field_first_name: true
+  field_ip_address: true
+  field_last_name: true

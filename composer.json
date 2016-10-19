@@ -82,6 +82,7 @@
     "drupal/inline_entity_form": "1.x-dev",
     "drupal/media_entity_audio": "1.x-dev",
     "drupal/migrate_plus": "~3",
+    "drupal/migrate_source_csv": "~2",
     "drupal/migrate_tools": "~3",
     "drupal/ng_lightbox": "~1",
     "drupal/pathauto": "~1",
@@ -152,10 +153,22 @@
     },
     "patches": {
       "drupal/core": {
-        "Menu_links migration is not working because option parameters were not found": "https://www.drupal.org/files/issues/d6_7_d8_migration-2707387-24.patch",
+        "Menu_links migration is not working because option parameters were not found": "https://www.drupal.org/files/issues/d6_7_d8_migration-2707387-40.patch",
         "List missing dependencies": "https://www.drupal.org/files/issues/call_to_a_member-2608408-34_0.patch",
-        "Redirect to install.php on empty DB": "https://www.drupal.org/files/issues/drupal-redirect_to_install-728702-92.patch"
+        "Redirect to install.php on empty DB": "https://www.drupal.org/files/issues/drupal-redirect_to_install-728702-92.patch",
+        "Categorize migrations according to their type": "https://www.drupal.org/files/issues/drupal-categorize_migrations-2711099-21.patch"
+      },
+      "drupal/config_installer": {
+        "config_installer_install_uninstalled_profile_dependencies() assumes too much": "https://www.drupal.org/files/issues/config_installer_2729243_2.patch"
+      },
+      "drupal/migrate_plus": {
+        "FormatDate process plugin": "https://www.drupal.org/files/issues/formatdate_process_plugin-2820490-2_0.patch"
       }
     }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
   }
 }

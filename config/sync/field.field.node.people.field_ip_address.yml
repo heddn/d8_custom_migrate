@@ -1,0 +1,19 @@
+uuid: 5b434081-f01a-4b41-803f-2be489b1d38b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ip_address
+    - node.type.people
+id: node.people.field_ip_address
+field_name: field_ip_address
+entity_type: node
+bundle: people
+label: 'IP Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

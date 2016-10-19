@@ -10,14 +10,14 @@ else
 fi
 
 # Provide default settings for running locally.
-sudo chmod +w ./web/sites/default
 if [ ! -f ./web/sites/default/settings.local.php ]
 then
   cp ./scripts/drupalvm/default.settings.local.php ./web/sites/default/settings.local.php
 fi
 
 # Allow writing to settings.php
-chmod 644 web/sites/default/settings.php
+chmod 755 ./web/sites/default
+chmod 664 web/sites/default/settings.php
 
 # cd web/themes/custom/custom_theme
 # npm install

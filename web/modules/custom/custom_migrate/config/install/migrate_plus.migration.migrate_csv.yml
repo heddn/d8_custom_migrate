@@ -1,12 +1,21 @@
+uuid: 5c12fdab-6767-485e-933c-fd17ed554b27
+langcode: en
+status: true
+dependencies:
+  enforced:
+    # List here the name of the module that provided this migration if you want
+    # this config to be removed when that module is uninstalled.
+    module:
+      - custom_migrate
 # The source data is in CSV files, so we use the 'csv' source plugin.
-id: csv_file
+id: migrate_csv
 label: CSV file migration
 migration_tags:
   - CSV
 source:
   plugin: csv
   # Full path to the file.
-  path: public://csv/people.csv
+  path: /artifacts/people.csv
   # The number of rows at the beginning which are not data.
   header_row_count: 1
   # These are the field names from the source file representing the key
@@ -35,11 +44,9 @@ source:
     4:
       country: Country
     5:
-      ip_address: IP Addres
-destination:
-  # Here we're saying that each row of data (line from the CSV file) will be
-  # used to create a node entity.
-  plugin: entity:node
+      ip_address: IP Address
+    6:
+      date_of_birth: Date of Birth
 process:
   # The content (node) type we are creating is 'people'.
   type:
@@ -48,14 +55,33 @@ process:
   # Most fields can be mapped directly - we just specify the destination (D8)
   # field and the corresponding field name from above, and the values will be
   # copied in.
-  title: first_last
+  title:
+    plugin: concat
+    source:
+      - first_name
+      - last_name
+    delimiter: ' '
   field_first_name: first_name
   field_last_name: last_name
   field_email: email
-  field_country: country
+  field_country:
+    plugin: entity_generate
+    source: country
   field_ip_address: ip_address
-
-# Required to cleanup CMI.
-dependencies:
-  module:
-    - custom_migrate
+  field_dob:
+    plugin: format_date
+    from_format: 'm/d/Y'
+    to_format: 'Y-m-d'
+    source: date_of_birth
+destination:
+  # Here we're saying that each row of data (line from the CSV file) will be
+  # used to create a node entity.
+  plugin: entity:node
+# List any optional or required migration dependencies.
+# Requried means that 100% of the content must be migrated
+# Optional means that that the other dependency should be run first but if there
+# are items from the dependant migration that were not successful, it will still
+# run the migration.
+migration_dependencies:
+  required: {}
+  optional: {}

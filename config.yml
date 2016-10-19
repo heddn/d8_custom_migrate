@@ -7,8 +7,8 @@ vagrant_synced_folder_default_type: nfs
 
 # If you need to run multiple instances of Drupal VM, set a unique hostname,
 # machine name, and IP address for each instance.
-vagrant_hostname: d8starter.dev
-vagrant_machine_name: d8starter
+vagrant_hostname: d8-custom-migrate.dev
+vagrant_machine_name: d8_custom_migrate
 vagrant_ip: 0.0.0.0
 
 # Allow Drupal VM to be accessed via a public network interface on your host.

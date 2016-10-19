@@ -1,0 +1,68 @@
+uuid: dbb64033-6f75-4345-bd50-e8cd7c0562f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.people.field_country
+    - field.field.node.people.field_dob
+    - field.field.node.people.field_email
+    - field.field.node.people.field_first_name
+    - field.field.node.people.field_ip_address
+    - field.field.node.people.field_last_name
+    - node.type.people
+  module:
+    - datetime
+    - user
+id: node.people.default
+targetEntityType: node
+bundle: people
+mode: default
+content:
+  field_country:
+    weight: 104
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_dob:
+    weight: 106
+    label: above
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+    type: datetime_time_ago
+  field_email:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_first_name:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_ip_address:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_last_name:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

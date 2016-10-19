@@ -1,0 +1,60 @@
+uuid: 5c12fdab-6767-485e-933c-fd17ed554b27
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_migrate
+id: migrate_csv
+migration_tags:
+  - CSV
+migration_group: null
+label: 'CSV file migration'
+source:
+  plugin: csv
+  path: /artifacts/people.csv
+  header_row_count: 1
+  keys:
+    - id
+  column_names:
+    -
+      id: Identifier
+    -
+      first_name: 'First Name'
+    -
+      last_name: 'Last Name'
+    -
+      email: 'Email Address'
+    -
+      country: Country
+    -
+      ip_address: 'IP Address'
+    -
+      date_of_birth: 'Date of Birth'
+process:
+  type:
+    plugin: default_value
+    default_value: people
+  title:
+    plugin: concat
+    source:
+      - first_name
+      - last_name
+    delimiter: ' '
+  field_first_name: first_name
+  field_last_name: last_name
+  field_email: email
+  field_country:
+    plugin: entity_generate
+    source: country
+  field_ip_address: ip_address
+  field_dob:
+    plugin: format_date
+    from_format: m/d/Y
+    to_format: Y-m-d
+    source: date_of_birth
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required: {  }
+  optional: {  }
