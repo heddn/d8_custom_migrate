@@ -55,7 +55,7 @@ parameters:
     #
     # Not recommended in production environments
     # @default false
-    debug: true
+    debug: false
     # Twig auto-reload:
     #
     # Automatically recompile Twig templates whenever the source code changes.
@@ -64,7 +64,7 @@ parameters:
     #
     # Not recommended in production environments
     # @default null
-    auto_reload: true
+    auto_reload: null
     # Twig cache:
     #
     # By default, Twig templates will be compiled and stored in the filesystem
@@ -75,7 +75,7 @@ parameters:
     #
     # Not recommended in production environments
     # @default true
-    cache: false
+    cache: true
   renderer.config:
     # Renderer required cache contexts:
     #
@@ -153,3 +153,22 @@ parameters:
     - sftp
     - webcal
     - rtsp
+
+   # Configure Cross-Site HTTP requests (CORS).
+   # Read https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+   # for more information about the topic in general.
+   # Note: By default the configuration is disabled.
+  cors.config:
+    enabled: false
+    # Specify allowed headers, like 'x-allowed-header'.
+    allowedHeaders: []
+    # Specify allowed request methods, specify ['*'] to allow all possible ones.
+    allowedMethods: []
+    # Configure requests allowed from specific origins.
+    allowedOrigins: ['*']
+    # Sets the Access-Control-Expose-Headers header.
+    exposedHeaders: false
+    # Sets the Access-Control-Max-Age header.
+    maxAge: false
+    # Sets the Access-Control-Allow-Credentials header.
+    supportsCredentials: false
