@@ -42,7 +42,6 @@ module:
   views_ui: 0
   menu_link_content: 1
   views: 10
-  config_installer: 1000
 theme:
   stable: 0
   classy: 0

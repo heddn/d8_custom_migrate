@@ -13,7 +13,11 @@ fi
 sudo chmod +w ./web/sites/default
 if [ ! -f ./web/sites/default/settings.local.php ]
 then
-  cp ./scripts/drupalvm/default.settings.local.php ./web/sites/default/settings.local.php
+  cp ./scripts/drupalvm/settings.local.php ./web/sites/default/settings.local.php
+fi
+if [ ! -f ./web/sites/default/services.local.yml ]
+then
+  cp ./scripts/drupalvm/services.local.yml ./web/sites/default/services.local.yml
 fi
 
 # Allow writing to settings.php
