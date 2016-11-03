@@ -66,35 +66,41 @@
   ],
   "require": {
     "composer/installers": "~1",
-    "cweagans/composer-patches": "~1.0",
+    "cweagans/composer-patches": "~1",
     "desandro/imagesloaded": "*",
     "desandro/masonry": "*",
-    "drupal-composer/drupal-scaffold": "~1",
+    "drupal-composer/drupal-scaffold": "~2",
+    "drupal/advagg": "2.x-dev",
     "drupal/admin_toolbar": "~1",
     "drupal/audiofield": "~1",
     "drupal/bootstrap": "~3",
+    "drupal/colorbox": "1.1",
     "drupal/config_installer": "~1",
     "drupal/console": "~1",
     "drupal/core": "~8",
+    "drupal/easy_breadcrumb": "1.x-dev",
     "drupal/entity_browser": "1.x-dev",
     "drupal/file_browser": "1.x-dev",
     "drupal/google_analytics": "~2",
     "drupal/inline_entity_form": "1.x-dev",
+    "drupal/link_attributes": "~1",
     "drupal/media_entity_audio": "1.x-dev",
+    "drupal/media_entity_image": "~1",
     "drupal/migrate_plus": "~3",
     "drupal/migrate_tools": "~3",
     "drupal/ng_lightbox": "~1",
+    "drupal/paragraphs": "1.x-dev",
     "drupal/pathauto": "~1",
+    "drupal/redirect": "~1",
     "drupal/simple_sitemap": "2.x-dev",
+    "drupal/smart_trim": "1.x-dev",
     "drupal/twig_tweak": "~1",
     "drupal/video_embed_field": "~1",
-    "drupal/video_embed_vidyard": "1.0-rc1",
     "drush/config-extra": "~1",
     "drush/drush": "~8",
     "enyo/dropzone": "*",
     "geerlingguy/drupal-vm": "dev-master",
-    "jackmoore/colorbox": "*",
-    "drupal/media_entity_image": "1.x-dev"
+    "jackmoore/colorbox": "*"
   },
   "require-dev": {
     "behat/behat": "~3.0",
@@ -118,6 +124,12 @@
     "classmap": [
       "scripts/composer/ScriptHandler.php"
     ]
+  },
+  "config" : {
+    "secure-http": false,
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
   },
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
@@ -153,10 +165,10 @@
     },
     "patches": {
       "drupal/core": {
-        "Menu_links migration is not working because option parameters were not found": "https://www.drupal.org/files/issues/d6_7_d8_migration-2707387-24.patch",
-        "List missing dependencies": "https://www.drupal.org/files/issues/call_to_a_member-2608408-34_0.patch",
-        "Redirect to install.php on empty DB": "https://www.drupal.org/files/issues/drupal-redirect_to_install-728702-92.patch",
-        "Categorize migrations according to their type": "https://www.drupal.org/files/issues/drupal-categorize_migrations-2711099-21.patch"
+        "Menu_links migration is not working because option parameters were not found": "https://www.drupal.org/files/issues/d6_7_d8_migration-2707387-49.patch",
+        "Redirect to install.php on empty DB": "https://www.drupal.org/files/issues/728702-163.patch",
+        "Inline responsive image styles,etc": "https://www.drupal.org/files/issues/allow_image_style_to_be-2061377-224.patch",
+        "Categorize migrations according to their type": "https://www.drupal.org/files/issues/categorize_migrations-2711099-33.patch"
       },
       "drupal/config_installer": {
         "config_installer_install_uninstalled_profile_dependencies() assumes too much": "https://www.drupal.org/files/issues/config_installer_2729243_2.patch"
