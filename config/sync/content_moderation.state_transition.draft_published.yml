@@ -1,0 +1,14 @@
+uuid: 27fbec9c-f014-4301-ab78-d27323c5302d
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_moderation.state.draft
+    - content_moderation.state.published
+_core:
+  default_config_hash: RUvIDJSYK301WYC0MoV4_JInYBhHvrHWooLVo540ql0
+id: draft_published
+label: Publish
+stateFrom: draft
+stateTo: published
+weight: -9

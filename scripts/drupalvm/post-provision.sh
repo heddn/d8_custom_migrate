@@ -20,12 +20,13 @@ then
   cp ./scripts/drupalvm/services.local.yml ./web/sites/default/services.local.yml
 fi
 
-# Allow writing to settings.php
+# Allow writing to settings.php.
 chmod 644 web/sites/default/settings.php
 
-# cd web/themes/custom/custom_theme
-# npm install
-# node_modules/gulp-cli/bin/gulp.js
+# Prepare the theme by downloading dependencies.
+cd web/themes/custom/custom_theme
+npm install
+node_modules/gulp-cli/.bin/gulp.js
 
 cd web
 ../vendor/bin/drush si config_installer -y

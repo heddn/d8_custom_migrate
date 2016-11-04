@@ -1,0 +1,14 @@
+uuid: fae307bc-edf0-4df2-a013-16e3c25dfe1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_moderation.state.draft
+    - content_moderation.state.published
+_core:
+  default_config_hash: i-QOLRK7Kz6H5xg84iCvwikK87FEbugFzvvW-G3EKyI
+id: published_draft
+label: 'Create New Draft'
+stateFrom: published
+stateTo: draft
+weight: -8

@@ -1,0 +1,31 @@
+{
+  "name": "custom_theme",
+  "description": "Custom Theme",
+  "main": "gulpfile.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "ignoredDependencies": [
+    "desandro-matches-selector",
+    "ev-emitter",
+    "fizzy-ui-utils",
+    "get-size",
+    "jquery",
+    "jquery-colorbox",
+    "outlayer"
+  ],
+  "devDependencies": {
+    "masonry": "^4.1.1",
+    "ckeditor": "^4.5.11",
+    "jquery-colorbox": "colorbox#^1.6.4",
+    "dropzone": "^4.3.0",
+    "imagesloaded": "^4.1.1",
+    "matchHeight": "matchheight#^0.7.0",
+    "bootstrap-sass": "^3.3.7"
+  }
+}

@@ -1,0 +1,22 @@
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://d8starter.dev/themes/custom/custom_theme/favicon.ico'
+  use_default: 1
+schemas:
+  bootstrap: 8000
+  custom_theme: 8000
+features:
+  comment_user_picture: 0
+  comment_user_verification: 0
+  favicon: 1
+  node_user_picture: 0
+logo:
+  path: ''
+  url: ''
+  use_default: 1
+cdn_provider: ''
+fluid_container: 1
+table_responsive: '-1'
+cdn_provider_import_data: ''
+table: ''
