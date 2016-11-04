@@ -1,0 +1,13 @@
+uuid: 2fa8d17b-39a1-40ad-90a1-02e36cc27078
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_moderation.state.draft
+_core:
+  default_config_hash: Q5uoDkzjDLNJV54aLzF0cOYKyQ6ICLXwWsuglFv1kso
+id: draft_draft
+label: 'Create New Draft'
+stateFrom: draft
+stateTo: draft
+weight: -10

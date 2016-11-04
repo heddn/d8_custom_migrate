@@ -8,58 +8,6 @@
       "url": "web/modules/custom/*"
     },
     {
-      "type": "package",
-      "package": {
-        "name": "enyo/dropzone",
-        "version": "dev-master",
-        "type": "drupal-library",
-        "source": {
-          "url": "https://github.com/enyo/dropzone.git",
-          "type": "git",
-          "reference": "origin/master"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "desandro/imagesloaded",
-        "version": "dev-master",
-        "type": "drupal-library",
-        "source": {
-          "url": "https://github.com/desandro/imagesloaded.git",
-          "type": "git",
-          "reference": "origin/master"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "desandro/masonry",
-        "version": "dev-master",
-        "type": "drupal-library",
-        "source": {
-          "url": "https://github.com/desandro/masonry.git",
-          "type": "git",
-          "reference": "origin/master"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "jackmoore/colorbox",
-        "version": "dev-master",
-        "type": "drupal-library",
-        "source": {
-          "url": "https://github.com/jackmoore/colorbox",
-          "type": "git",
-          "reference": "origin/master"
-        }
-      }
-    },
-    {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
     }
@@ -67,14 +15,12 @@
   "require": {
     "composer/installers": "~1",
     "cweagans/composer-patches": "~1",
-    "desandro/imagesloaded": "*",
-    "desandro/masonry": "*",
     "drupal-composer/drupal-scaffold": "~2",
     "drupal/advagg": "2.x-dev",
     "drupal/admin_toolbar": "~1",
     "drupal/audiofield": "~1",
     "drupal/bootstrap": "~3",
-    "drupal/colorbox": "1.1",
+    "drupal/colorbox": "1.x-dev",
     "drupal/config_installer": "~1",
     "drupal/console": "~1",
     "drupal/core": "~8",
@@ -98,9 +44,7 @@
     "drupal/video_embed_field": "~1",
     "drush/config-extra": "~1",
     "drush/drush": "~8",
-    "enyo/dropzone": "*",
-    "geerlingguy/drupal-vm": "dev-master",
-    "jackmoore/colorbox": "*"
+    "geerlingguy/drupal-vm": "dev-master"
   },
   "require-dev": {
     "behat/behat": "~3.0",
@@ -158,9 +102,6 @@
       ],
       "drush/contrib/{$name}": [
         "type:drupal-drush"
-      ],
-      "web/libraries/{$name}": [
-        "type:drupal-library"
       ]
     },
     "patches": {
