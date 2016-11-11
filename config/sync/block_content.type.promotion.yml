@@ -1,0 +1,8 @@
+uuid: 13a448b0-436a-4195-b177-379fc7319df9
+langcode: en
+status: true
+dependencies: {  }
+id: promotion
+label: Promotion
+revision: 1
+description: ''

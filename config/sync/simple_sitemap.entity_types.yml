@@ -1,5 +1,6 @@
-node: {  }
+node:
+  landing_page:
+    index: '1'
+    priority: '0.7'
 taxonomy_term: {  }
 menu_link_content: {  }
-_core:
-  default_config_hash: vTzgsXLDWE0Dd5RfF_EcUO-CK4vrz5opNf5b_oytids
