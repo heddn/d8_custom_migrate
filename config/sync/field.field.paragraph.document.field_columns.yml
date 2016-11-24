@@ -1,0 +1,23 @@
+uuid: 1a96ff65-8ecb-4abc-8ae4-eb5f11098c03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_columns
+    - paragraphs.paragraphs_type.document
+id: paragraph.document.field_columns
+field_name: field_columns
+entity_type: paragraph
+bundle: document
+label: Columns
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:classy_paragraphs_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

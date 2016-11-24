@@ -1,0 +1,7 @@
+uuid: 02e5803c-6385-4b12-b244-03a45559bbcc
+langcode: en
+status: true
+dependencies: {  }
+id: c3_two_third_column
+label: 'Column - Two third'
+classes: col-md-8

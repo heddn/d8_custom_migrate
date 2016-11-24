@@ -1,0 +1,7 @@
+uuid: 4a523513-7141-458d-ac95-a03fe1f0f5a3
+langcode: en
+status: true
+dependencies: {  }
+id: push3_two_third
+label: 'Push - Two third'
+classes: col-md-push-8

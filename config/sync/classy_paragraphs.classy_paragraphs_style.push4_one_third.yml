@@ -1,0 +1,7 @@
+uuid: 94970a3b-375e-4b6e-bb53-b29d37dc939a
+langcode: en
+status: true
+dependencies: {  }
+id: push4_one_third
+label: 'Push - One third'
+classes: col-md-push-4

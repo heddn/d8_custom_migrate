@@ -13,7 +13,7 @@ _core:
 id: custom_theme_tools
 theme: custom_theme
 region: sidebar_first
-weight: 0
+weight: -7
 provider: null
 plugin: 'system_menu_block:tools'
 settings:

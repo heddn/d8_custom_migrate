@@ -1,0 +1,44 @@
+uuid: 5997cc89-87bd-48e3-a43d-324d494d8f08
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity_document
+    - views
+name: document
+label: Document
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select document'
+selection_display: multi_step_display
+selection_display_configuration:
+  entity_type: media_bundle
+  display: label
+  display_settings:
+    view_mode: default
+  select_text: 'Use selected'
+  selection_hidden: false
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  fce1eab5-27e8-4031-a904-bdcf1de46c15:
+    settings:
+      extensions: 'pdf txt doc docx xls xlsx'
+      media_bundle: document
+      upload_location: 'public://[date:custom:Y]-[date:custom:m]'
+      submit_text: 'Select document'
+    uuid: fce1eab5-27e8-4031-a904-bdcf1de46c15
+    weight: 1
+    label: 'Upload Document'
+    id: media_entity_document_upload
+  f3ad2c3f-70dc-43fa-84fe-db72066d2d60:
+    settings:
+      view: media_browser
+      view_display: document_browser
+      submit_text: 'Select document'
+    uuid: f3ad2c3f-70dc-43fa-84fe-db72066d2d60
+    weight: 2
+    label: 'Existing Documents'
+    id: view

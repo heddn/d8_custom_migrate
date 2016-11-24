@@ -9,6 +9,7 @@ module:
   block_place: 0
   breakpoint: 0
   ckeditor: 0
+  classy_paragraphs: 0
   color: 0
   comment: 0
   config: 0
@@ -41,6 +42,7 @@ module:
   link: 0
   link_attributes: 0
   media_entity: 0
+  media_entity_document: 0
   media_entity_image: 0
   menu_ui: 0
   node: 0

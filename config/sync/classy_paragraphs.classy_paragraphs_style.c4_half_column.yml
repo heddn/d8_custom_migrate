@@ -1,0 +1,7 @@
+uuid: 682ad89b-fd10-43a6-9b92-4ce5422179e5
+langcode: en
+status: true
+dependencies: {  }
+id: c4_half_column
+label: 'Column - Half'
+classes: col-md-6

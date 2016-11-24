@@ -14,9 +14,6 @@ name: browse_files
 label: 'Browser for files'
 display: modal
 display_configuration:
-  widget_ids:
-    735d146c-a4b2-4327-a057-d109e0905e05: 'Upload files'
-    a4ad947c-9669-497c-9988-24351955a02f: 'Files listing'
   width: ''
   height: '768'
   link_text: 'Select files'

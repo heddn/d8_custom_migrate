@@ -11,7 +11,7 @@ _core:
 id: custom_theme_search
 theme: custom_theme
 region: sidebar_first
-weight: -1
+weight: -5
 provider: null
 plugin: search_form_block
 settings:

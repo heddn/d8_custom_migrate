@@ -1,0 +1,22 @@
+uuid: 2f6b820e-e97f-4462-843c-87bcbfa4a53d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.promotion
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.promotion.body
+field_name: body
+entity_type: block_content
+bundle: promotion
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

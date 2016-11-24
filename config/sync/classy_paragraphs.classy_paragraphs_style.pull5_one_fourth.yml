@@ -1,0 +1,7 @@
+uuid: 1efcfc5f-d0cb-445c-a504-f1c5d3530bc1
+langcode: en
+status: true
+dependencies: {  }
+id: pull5_one_fourth
+label: 'Pull - One fourth'
+classes: col-md-pull-3

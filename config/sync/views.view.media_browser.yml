@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - image.style.file_entity_browser_small
+    - media_entity.bundle.document
     - media_entity.bundle.image
   module:
     - entity_browser
@@ -267,8 +268,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            all: all
-            image: image
+            document: document
           group: 1
           exposed: false
           expose:
@@ -363,6 +363,23 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user.permissions
+      tags: {  }
+  document_browser:
+    display_plugin: entity_browser
+    id: document_browser
+    display_title: 'Document browser'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
