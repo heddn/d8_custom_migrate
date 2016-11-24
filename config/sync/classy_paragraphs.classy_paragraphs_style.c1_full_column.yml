@@ -1,0 +1,7 @@
+uuid: 713a1315-be2a-481b-905f-7d7b5a5dfba3
+langcode: en
+status: true
+dependencies: {  }
+id: c1_full_column
+label: 'Column - Full'
+classes: col-md-12

@@ -1,17 +1,17 @@
-uuid: 866ed2c7-f184-48b8-a55a-0118500566b1
+uuid: 7cb29a3d-c2c2-4a55-a4c9-382fd903c99c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image.field_columns
-    - field.field.paragraph.image.field_media
-    - paragraphs.paragraphs_type.image
-id: paragraph.image.default
+    - field.field.paragraph.document.field_columns
+    - field.field.paragraph.document.field_document
+    - paragraphs.paragraphs_type.document
+id: paragraph.document.default
 targetEntityType: paragraph
-bundle: image
+bundle: document
 mode: default
 content:
-  field_media:
+  field_document:
     weight: 0
     label: hidden
     settings:

@@ -4,23 +4,26 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_regions
     - node.type.landing_page
   module:
-    - text
+    - entity_reference_revisions
     - user
 id: node.landing_page.teaser
 targetEntityType: node
 bundle: landing_page
 mode: teaser
 content:
-  body:
+  field_regions:
+    type: entity_reference_revisions_entity_view
+    weight: 2
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
     settings:
-      trim_length: 600
+      view_mode: teaser
+      link: ''
     third_party_settings: {  }
   links:
-    weight: 100
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

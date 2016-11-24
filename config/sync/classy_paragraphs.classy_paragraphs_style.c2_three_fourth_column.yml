@@ -1,0 +1,7 @@
+uuid: f78532a6-3b0f-4036-a842-2efee4dff740
+langcode: en
+status: true
+dependencies: {  }
+id: c2_three_fourth_column
+label: 'Column - Three fourth'
+classes: col-md-9

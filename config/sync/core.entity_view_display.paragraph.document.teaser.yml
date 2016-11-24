@@ -1,0 +1,25 @@
+uuid: 2c98cc1b-f115-428b-89de-32672c8c9d5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.teaser
+    - field.field.paragraph.document.field_document
+    - image.style.medium
+    - paragraphs.paragraphs_type.document
+  module:
+    - media_entity
+id: paragraph.document.teaser
+targetEntityType: paragraph
+bundle: document
+mode: teaser
+content:
+  field_document:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: media
+    third_party_settings: {  }
+    type: media_thumbnail
+hidden: {  }

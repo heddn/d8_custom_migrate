@@ -1,0 +1,7 @@
+uuid: 08659d60-9ee7-44e7-8bf6-6fec6318c21f
+langcode: en
+status: true
+dependencies: {  }
+id: c6_one_fourth_column
+label: 'Column - One fourth'
+classes: col-md-3

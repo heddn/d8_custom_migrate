@@ -1,0 +1,7 @@
+uuid: f2550fad-f78c-430d-8653-cb4c7e9c1656
+langcode: en
+status: true
+dependencies: {  }
+id: pull3_half
+label: 'Pull - Half'
+classes: col-md-pull-6

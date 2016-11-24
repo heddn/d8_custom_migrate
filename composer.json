@@ -16,10 +16,11 @@
     "composer/installers": "~1",
     "cweagans/composer-patches": "~1",
     "drupal-composer/drupal-scaffold": "~2",
-    "drupal/advagg": "2.x-dev",
     "drupal/admin_toolbar": "~1",
+    "drupal/advagg": "2.x-dev",
     "drupal/audiofield": "~1",
     "drupal/bootstrap": "~3",
+    "drupal/classy_paragraphs": "~1",
     "drupal/colorbox": "1.x-dev",
     "drupal/config_installer": "~1",
     "drupal/console": "~1",
@@ -31,6 +32,7 @@
     "drupal/inline_entity_form": "1.x-dev",
     "drupal/link_attributes": "~1",
     "drupal/media_entity_audio": "1.x-dev",
+    "drupal/media_entity_document": "~1",
     "drupal/media_entity_image": "~1",
     "drupal/migrate_plus": "~3",
     "drupal/migrate_tools": "~3",
@@ -106,10 +108,9 @@
     },
     "patches": {
       "drupal/core": {
-        "Menu_links migration is not working because option parameters were not found": "https://www.drupal.org/files/issues/d6_7_d8_migration-2707387-57.patch",
         "Redirect to install.php on empty DB": "https://www.drupal.org/files/issues/728702-163.patch",
         "Inline responsive image styles,etc": "https://www.drupal.org/files/issues/allow_image_style_to_be-2061377-224.patch",
-        "Categorize migrations according to their type": "https://www.drupal.org/files/issues/categorize_migrations-2711099-37.patch"
+        "Categorize migrations according to their type": "https://www.drupal.org/files/issues/categorize_migrations-2711099-49.patch"
       },
       "drupal/config_installer": {
         "config_installer_install_uninstalled_profile_dependencies() assumes too much": "https://www.drupal.org/files/issues/config_installer_2729243_2.patch"

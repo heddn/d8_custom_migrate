@@ -1,0 +1,7 @@
+uuid: 5b1356d8-eab2-48fd-b090-833eff004adc
+langcode: en
+status: true
+dependencies: {  }
+id: c5_one_third_column
+label: 'Column - One third'
+classes: col-md-4
