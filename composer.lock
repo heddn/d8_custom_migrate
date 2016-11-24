@@ -1299,7 +1299,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/classy_paragraphs-8.x-1.0-beta1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-beta1",
                 "shasum": "ff611516e6b9fbe539284bbb620f1844c6eb5fb3"
             },
             "require": {
@@ -2618,7 +2618,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/link_attributes-8.x-1.0-alpha3.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha3",
                 "shasum": "a43682e3a317054f9a6311a05b34f32f0e154049"
             },
             "require": {
