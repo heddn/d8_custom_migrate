@@ -62,7 +62,8 @@
     "symfony/css-selector": "2.7.*"
   },
   "replace": {
-    "drupal/drupal": "*"
+    "drupal/drupal": "*",
+    "drupal/link-link": "*"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
