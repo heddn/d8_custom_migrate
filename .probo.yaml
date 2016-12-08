@@ -1,0 +1,29 @@
+assets:
+  - dev.sql.gz
+
+steps:
+  - name: Upgrade PHP
+    plugin: Script
+    script: |
+      apt-get update -y
+      apt-get install software-properties-common -y
+      LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y
+      apt-get update -y
+      apt-get install php7.0 libapache2-mod-php7.0 php7.0-mysql php7.0-gd php7.0-fpm php7.0-mbstring php7.0-curl php7.0-zip php7.0-xml php7.0-bcmath --force-yes -y
+      apt-get update -y
+      npm -g install npm@latest-2
+
+  - name: Composer Install
+    command: "cd /src; composer self-update; composer install --prefer-dist;"
+
+  - name: Probo Setup
+    plugin: Drupal
+    database: dev.sql.gz
+    databaseUpdates: true
+    databaseGzipped: true
+    subDirectory: web
+    drupalVersion: 8
+    settingsAppend: "$config_directories = [CONFIG_SYNC_DIRECTORY => '../config/sync'];"
+
+  - name: Configuration Import Site
+    command: "cd /src/web; drush cim -y; drush cr;"
