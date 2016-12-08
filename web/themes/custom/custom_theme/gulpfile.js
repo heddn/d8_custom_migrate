@@ -18,6 +18,7 @@ var processors = [
 ];
 var bowerComponents = '../../../../bower_components';
 var assetLibraries = '../../../libraries';
+var patternlab = './pattern-lab';
 promise.polyfill();
 
 gulp.task('prod', ['bower'], function () {
@@ -56,7 +57,7 @@ gulp.task('bower', function(callback) {
   runSequence(
     'run-bower',
     ['clean-libraries', 'clean-theme-bootstrap', 'clean-theme-vendor'],
-    ['bootstrap', 'dropzone', 'imagesloaded', 'jquery-colorbox', 'masonry', 'matchHeight'],
+    ['bootstrap', 'dropzone', 'imagesloaded', 'jquery-colorbox', 'masonry', 'matchHeight', 'patternlab'],
     callback
   );
 });
@@ -89,6 +90,11 @@ gulp.task('masonry', function() {
 gulp.task('matchHeight', function() {
   return gulp.src(bowerComponents + '/matchHeight/**/*.*', { base: bowerComponents })
     .pipe(gulp.dest('./vendor'));
+});
+
+gulp.task('patternlab', function() {
+  return gulp.src(bowerComponents + '/edition-php-drupal-standard/**/*', { base: bowerComponents + '/edition-php-drupal-standard' })
+    .pipe(gulp.dest(patternlab));
 });
 
 // Clean destinations.
