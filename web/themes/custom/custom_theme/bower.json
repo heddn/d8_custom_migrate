@@ -26,6 +26,7 @@
     "dropzone": "^4.3.0",
     "imagesloaded": "^4.1.1",
     "matchHeight": "matchheight#^0.7.0",
-    "bootstrap-sass": "^3.3.7"
+    "bootstrap-sass": "^3.3.7",
+    "edition-php-drupal-standard": "pattern-lab/edition-php-drupal-standard#^2.2.0"
   }
 }
