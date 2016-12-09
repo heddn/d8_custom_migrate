@@ -1,6 +1,6 @@
 {
   "directory": "../../../../bower_components",
   "scripts": {
-    "postinstall": "./bower-postinstall.sh"
+    "postinstall": "../../../../scripts/drupalvm/patternlab-postinstall.sh"
   }
 }
