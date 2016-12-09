@@ -21,6 +21,7 @@ var bowerComponents = '../../../../bower_components';
 var assetLibraries = '../../../libraries';
 var patternlab = './pattern-lab';
 var chmodpatternlab = '../../../../scripts/drupalvm/';
+var patternLabPostInstall = '../../../../scripts/drupalvm/patternlab-postinstall.sh';
 
 promise.polyfill();
 
@@ -67,7 +68,7 @@ gulp.task('bower', function(callback) {
 });
 
 gulp.task('chmod', function() {
-  gulp.src('../../../../scripts/drupalvm/patternlab-postinstall.sh')
+  gulp.src(patternLabPostInstall)
     .pipe(chmod({
       owner: {
         read: true,
