@@ -7,6 +7,7 @@ var autoprefixer = require('autoprefixer');
 var bower        = require('gulp-bower');
 var runSequence  = require('run-sequence');
 var clean        = require('gulp-clean');
+var chmod        = require('gulp-chmod');
 
 var input = './sass/**/*.scss';
 var output = './css';
@@ -19,6 +20,8 @@ var processors = [
 var bowerComponents = '../../../../bower_components';
 var assetLibraries = '../../../libraries';
 var patternlab = './pattern-lab';
+var chmodpatternlab = '../../../../scripts/drupalvm/';
+
 promise.polyfill();
 
 gulp.task('prod', ['bower'], function () {
@@ -55,11 +58,30 @@ gulp.task('watch', function () {
 
 gulp.task('bower', function(callback) {
   runSequence(
+    'chmod',
     'run-bower',
     ['clean-libraries', 'clean-theme-bootstrap', 'clean-theme-vendor'],
     ['bootstrap', 'dropzone', 'imagesloaded', 'jquery-colorbox', 'masonry', 'matchHeight', 'patternlab'],
     callback
   );
+});
+
+gulp.task('chmod', function() {
+  gulp.src('../../../../scripts/drupalvm/patternlab-postinstall.sh')
+    .pipe(chmod({
+      owner: {
+        read: true,
+        write: true,
+        execute: true
+      },
+      group: {
+        execute: true
+      },
+      others: {
+        execute: true
+      }
+    }))
+    .pipe(gulp.dest(chmodpatternlab))
 });
 
 gulp.task('run-bower', function() {
