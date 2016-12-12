@@ -328,9 +328,6 @@ $settings['update_free_access'] = FALSE;
  *
  * You can also define an array of host names that can be accessed directly,
  * bypassing the proxy, in $settings['http_client_config']['proxy']['no'].
- *
- * If these settings are not configured, the system environment variables
- * HTTP_PROXY, HTTPS_PROXY, and NO_PROXY on the web server will be used instead.
  */
 # $settings['http_client_config']['proxy']['http'] = 'http://proxy_user:proxy_pass@example.com:8080';
 # $settings['http_client_config']['proxy']['https'] = 'http://proxy_user:proxy_pass@example.com:8080';
@@ -673,7 +670,7 @@ if ($settings['hash_salt']) {
 /**
  * Load services definition file.
  */
-$settings['container_yamls'][] = __DIR__ . '/services.yml';
+$settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 
 /**
  * Override the default service container class.
@@ -751,9 +748,8 @@ $settings['file_scan_ignore_directories'] = [
   'bower_components',
 ];
 
-// Automatic Platform.sh settings.
-if (file_exists(__DIR__ . '/settings.platformsh.php')) {
-  include __DIR__ . '/settings.platformsh.php';
+if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
+  include $app_root . '/' . $site_path . '/settings.platformsh.php';
 }
 
 /**
@@ -766,6 +762,7 @@ if (file_exists(__DIR__ . '/settings.platformsh.php')) {
  *
  * Keep this code block at the end of this file to take full effect.
  */
-if (file_exists(__DIR__ . '/settings.local.php')) {
-  include __DIR__ . '/settings.local.php';
+
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
 }
