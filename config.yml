@@ -71,8 +71,6 @@ php_output_buffering: "Off"
 # Run specified scripts before or after VM is provisioned. Path is relative to
 # the `provisioning/playbook.yml` file.
 pre_provision_scripts: []
-post_provision_scripts:
-  - "{{ config_dir }}/scripts/drupalvm/post-provision.sh"
 
 # MySQL Configuration.
 mysql_max_allowed_packet: 512M
