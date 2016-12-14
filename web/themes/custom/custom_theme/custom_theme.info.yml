@@ -22,3 +22,24 @@ regions:
 libraries:
   - custom_theme/global-styling
   - custom_theme/bootstrap-scripts
+
+# For compatibility with Pattern Lab templates; this list must
+# always be the folders immediately under the `$sourceDir` patterns folder
+# `$sourceDir` = defined in `pattern-lab/config/config.yml` under `sourceDir
+# patterns folder = `$sourceDir` + `_patterns/`
+component-libraries:
+  atoms:
+    paths:
+      - patternlab/source/_patterns/01-atoms
+  molecules:
+    paths:
+      - patternlab/source/_patterns/02-molecules
+  organisms:
+    paths:
+      - patternlab/source/_patterns/03-organisms
+  templates:
+    paths:
+      - patternlab/source/_patterns/04-templates
+  pages:
+    paths:
+      - patternlab/source/_patterns/05-pages

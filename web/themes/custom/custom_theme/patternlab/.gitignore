@@ -5,7 +5,7 @@ source/styleguide/*
 config/*.json
 
 # Generated files
-css/style.css
+source/css/style.css
 node_modules
 source/bootstrap
 source/libraries

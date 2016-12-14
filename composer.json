@@ -22,6 +22,7 @@
     "drupal/bootstrap": "~3",
     "drupal/classy_paragraphs": "~1",
     "drupal/colorbox": "1.x-dev",
+    "drupal/components": "~1",
     "drupal/config_installer": "~1",
     "drupal/console": "~1",
     "drupal/core": "~8",
@@ -88,7 +89,7 @@
     "post-update-cmd": [
       "DrupalProject\\composer\\ScriptHandler::buildScaffold",
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-      "@composer install --working-dir=patternlab"
+      "@composer install --working-dir=web/themes/custom/custom_theme/patternlab"
     ]
   },
   "extra": {
