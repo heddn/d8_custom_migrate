@@ -42,6 +42,7 @@ installed_extras:
   - adminer
   - blackfire
   - drupalconsole
+  - drush
   # - elasticsearch
   # - java
   - mailhog
@@ -52,7 +53,8 @@ installed_extras:
   # - redis
   # - ruby
   # - selenium
-  - solr
+  # - solr
+  # - upload-progress
   - varnish
   - xdebug
   # - xhprof

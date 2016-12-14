@@ -1,0 +1,16 @@
+<div class="input-group">
+  {% include "atoms-input" %}
+    <div class="input-group-btn">
+      {% include "atoms-button" %}
+	    <button type="button" class="btn {{ buttonClass }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    	{% if caret %}<span class="{{ caret }}"></span>{% endif %}
+			<span class="sr-only">{{ cta }}</span>
+	    </button>
+	    <ul class="dropdown-menu">
+        {% for item in dropdownList %}
+					<li {% if item.separator %}role="separator"{% endif %} {% if item.listItemClass %} class="{{ item.listItemClass }}"{% endif %}><a href="{{ item.url }}">{{ item.text }}</a></li>
+        {% endfor %}
+	    </ul>
+    </div>
+</div><!-- /.input-group -->
+

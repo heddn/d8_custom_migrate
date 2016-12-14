@@ -22,3 +22,6 @@ Vagrantfile.local
 bower_components
 node_modules
 npm-debug.log
+
+# Ignore console
+console/*

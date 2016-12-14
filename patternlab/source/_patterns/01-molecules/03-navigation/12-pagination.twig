@@ -1,0 +1,18 @@
+<nav>
+	<ul class="pagination {{ paginationClass }}">
+		<li>
+			<a href="{{ url }}" aria-label="Previous">
+			<span aria-hidden="true">&laquo;</span>
+      		</a>
+	  	</li>
+				{% for item in paginationList %}
+					<li><a href="{{ item.url }}">{{ item.text }}</a></li>
+				{% endfor %}
+	  	<li>
+	  		<a href="{{ url }}" aria-label="Next">
+	  		<span aria-hidden="true">&raquo;</span>
+      		</a>
+	  	</li>
+  	</ul>
+</nav>
+

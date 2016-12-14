@@ -1,0 +1,307 @@
+{
+	"title" : "Pattern Lab",
+	"heading" : "Page Header",
+	"subheading" : "Subtext For Header",
+	"text" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+	"placeholder" : "Placeholder Text",
+	"url" : "#",
+	"cta" : "Call To Action",
+	"ariaLabel" : "Aria label",
+	"listItem" : "List Item",
+	"listItemNested" : "Nested List Item",
+	"term" : "Term",
+	"definition" : "This is the definition of the term.",
+	"badge" : "23",
+	"label" : "New Label",
+	"labelClass" : "label-default",
+	"progressBarClass" : "",
+	"progressCompleteText" : "60% Complete",
+	"progressMinWidth" : false,
+	"removeProgressText" : true,
+	"ariaMin" : 0,
+	"ariaMax" : 100,
+	"ariaNow" : 60,
+	"src" : "../../images/bootstrapthumb.jpg",
+	"alt" : "Bootstrap Thumbnail",
+	"caption" : "Caption Text",
+	"panelClass" : "panel-default",
+	"panelHeading" : false,
+	"panelFooter" : false,
+	"table" : {
+		"thead" : {
+			"th" : [
+				{ "title" : "Table Heading 1" },
+				{ "title" : "Table Heading 2" },
+				{ "title" : "Table Heading 3" },
+				{ "title" : "Table Heading 4" }
+			]
+		},
+		"tbody" : {
+			"tr" : [
+				{
+					"td" : [
+						{ "text" : "row 1 cell 1" },
+						{ "text" : "row 1 cell 2" },
+						{ "text" : "row 1 cell 3" },
+						{ "text" : "row 1 cell 4" }
+					]
+				}
+			]
+		}
+	},
+	"wellClass" : "",
+	"mediaClass" : "",
+	"mediaLeft" : true,
+	"mediaRight" : false,
+	"mediaImage" : "../../images/bootstrapthumb64.jpg",
+	"embedClass" : "embed-responsive-16by9",
+	"mediaEmbed" : "//www.youtube.com/embed/zpOULjyy-n8?rel=0",
+	"inputClass" : "",
+	"inputAddonBefore" : "Addon",
+	"inputAddonAfter" : false,
+	"buttonClass" :"btn-default",
+	"breadcrumbs" : [
+		{
+			"url" : "#",
+			"text" : "Link 1"
+
+		},
+		{
+			"url" : "#",
+			"text" : "Link 2"
+		},
+		{
+			"url" : "#",
+			"text" : "Link 3"
+		}
+	],
+	"caret" : "caret",
+	"dropdownClass" : "dropdown",
+	"dropdownList" : [
+		{
+			"url" : "#",
+			"text" : "Action"
+		},
+		{
+			"url" : "#",
+			"text" : "Another action"
+		},
+		{
+			"url" : "#",
+			"text" : "Something else here"
+		},
+		{
+			"url" : "#",
+			"text" : "Link 4"
+		}
+	],
+	"navClass" : "",
+	"navList" : [
+		{
+			"url" : "#",
+			"text" : "Home"
+		},
+		{
+			"url" : "#",
+			"text" : "Profile"
+		},
+		{
+			"url" : "#",
+			"text" : "Messages"
+		}
+	],
+	"paginationClass" : "",
+	"paginationList" : [
+		{
+			"url" : "#",
+			"text" : "1"
+		},
+		{
+			"url" : "#",
+			"text" : "2"
+		},
+		{
+			"url" : "#",
+			"text" : "3"
+		},
+		{
+			"url" : "#",
+			"text" : "4"
+		},
+		{
+			"url" : "#",
+			"text" : "5"
+		}
+	],
+	"pagerClass" : "",
+	"pagerList" : [
+		{
+			"url" : "#",
+			"text" : "Previous"
+		},
+		{
+			"url" : "#",
+			"text" : "Next"
+		}
+	],
+	"buttonGroupClass" : "",
+	"buttonGroupList" : [
+		{ "text" : "Left" },
+		{ "text" : "Middle" },
+		{ "text" : "Right"}
+	],
+
+	"alertClass" : "alert-success",
+	"alertText" : "I am alerting you about something",
+	"dismissableAlert" : false,
+	"listGroupClass" : "",
+	"listGroup" : [
+		{ "text" : "Cras justo odio" },
+		{ "text" : "Dapibus ac facilisis in" },
+		{ "text" : "Morbi leo risus" },
+		{ "text" : "Porta ac consectetur ac" },
+		{ "text" : "Vestibulum at eros" }
+	],
+	"navbarBrandText" : "Pattern Lab",
+	"navbarNavClass" : "",
+	"navbarNavFirst" : true,
+	"navbarNavLast" : {
+		"navbarNavClass" : "navbar-right"
+	},
+	"navbarNav" : [
+		{
+			"url" : "#",
+			"text" : "Link"
+		},
+		{
+			"url" : "#",
+			"text" : "Link"
+		},
+		{
+			"url" : "#",
+			"text" : "Dropdown",
+			"hasDropdown" : true,
+			"dropdownMenu" : [
+				{
+					"url" : "#",
+					"text" : "Action"
+				},
+				{
+					"url" : "#",
+					"text" : "Another action"
+				},
+				{
+					"url" : "#",
+					"text" : "Something else here"
+				},
+				{
+					"separator" : "true"
+				},
+				{
+					"url" : "#",
+					"text" : "Link 4"
+				}
+
+			]
+		}
+	],
+	"navbarFormClass" : "navbar-left",
+	"navbarClass" : "navbar-default",
+	"mediaList" : [
+		{
+			"mediaLeft" : true,
+			"mediaRight" : false,
+			"nestedMedia" : [
+				{
+					"mediaLeft" : false,
+					"mediaRight" : true
+				},
+				{
+					"mediaLeft" : true,
+					"mediaRight" : false
+				}
+			]
+
+		},
+		{
+			"heading" : "Item 2",
+			"text" : "This is the second item that is not nested.",
+			"mediaLeft" : true,
+			"mediaRight" : false,
+			"nestedMedia" : [
+				{
+					"heading" : "Nested Item 1",
+					"text" : "This is the first nested item of the list.",
+					"mediaLeft" : true,
+					"mediaRight" : false
+				},
+				{
+					"heading" : "Nested Item 2",
+					"text" : "This is the second nested item of the list",
+					"mediaLeft" : false,
+					"mediaRight" : true
+				}
+			]
+		}
+	],
+	"html_attributes": {
+		"Attribute()": {}
+	},
+	"attributes": {
+		"Attribute()": {}
+	},
+	"navbar_attributes": {
+		"Attribute()": {}
+	},
+	"content_attributes": {
+		"Attribute()": {}
+	},
+	"logged_in": false,
+	"root_path": "interior-page-path",
+  "theme": {
+		"settings": {
+			"navbar_position": "static-top",
+			"fluid_container": false
+		},
+		"has_glyphicons": true
+	},
+	"page": {
+		"navigation": {
+			"include()": {
+				"pattern": "molecules-block--main-navigation",
+				"with": {
+					"content": "molecules-block--main-navigation"
+				}
+			}
+		},
+		"header": {
+			"include()": {
+				"pattern": "molecules-block--page-title",
+				"with": {
+					"content": {
+						"include()": {
+							"pattern": "molecules-page-title.html",
+							"with": {
+								"title": "Basic page"
+							}
+						}
+					}
+				}
+			}
+		},
+		"content": {
+			"include()": {
+				"pattern": "organisms-block--main",
+				"with": {
+					"content": "organisms-page-full",
+					"label": ""
+				}
+			}
+		},
+		"footer": {
+			"include()": {
+				"pattern": "molecules-block--powered-by"
+			}
+		}
+	}
+}

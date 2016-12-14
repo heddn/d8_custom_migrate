@@ -1,0 +1,6 @@
+{% if not container %}
+  {% set container = 'container' %}
+{% endif %}
+<footer class="footer {{ container }}" role="contentinfo">
+  {{ page.footer }}
+</footer>

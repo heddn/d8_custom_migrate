@@ -1,0 +1,12 @@
+<div class="input-group {{ inputClass }}">
+	{% if inputAddonBefore %}
+	<span class="input-group-addon">{{ inputAddonBefore }}</span>
+	{% endif %}
+	{% include "atoms-input" %}
+	{% if inputAddonAfter %}
+	<span class="input-group-addon">{{ inputAddonAfter }}</span>
+	{% endif %}
+</div>
+
+
+

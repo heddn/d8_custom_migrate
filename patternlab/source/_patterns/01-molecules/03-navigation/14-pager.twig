@@ -1,0 +1,8 @@
+<nav>
+	<ul class="pager">
+			{% for item in pagerList %}
+				<li {% if item.pagerClass %} class="{{ item.pagerClass }}"{% endif %}><a href="{{ item.url }}">{{ item.text }}</a></li>
+			{% endfor %}
+  	</ul>
+</nav>
+

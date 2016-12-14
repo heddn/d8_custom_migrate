@@ -1,0 +1,27 @@
+{
+  "attributes": {
+    "Attribute()": {
+      "class": [
+        "node",
+        "node--article"
+      ]
+    }
+  },
+  "author_attributes": {
+    "Attribute()": {}
+  },
+  "author_name": "John Smith",
+  "date": "Mon, 01/04/2016 - 12:08",
+  "label": "Article content type page title",
+  "page": true,
+  "display_submitted": true,
+  "content_attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "join()": [
+      "molecules-field--node-body",
+      "organisms-field--comment.html"
+    ]
+  }
+}
