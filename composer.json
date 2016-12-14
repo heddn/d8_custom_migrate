@@ -82,30 +82,22 @@
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
     "post-install-cmd": [
       "DrupalProject\\composer\\ScriptHandler::buildScaffold",
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "@composer install --working-dir=patternlab"
     ],
     "post-update-cmd": [
       "DrupalProject\\composer\\ScriptHandler::buildScaffold",
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "@composer install --working-dir=patternlab"
     ]
   },
   "extra": {
     "installer-paths": {
-      "web/core": [
-        "type:drupal-core"
-      ],
-      "web/modules/contrib/{$name}": [
-        "type:drupal-module"
-      ],
-      "web/profiles/contrib/{$name}": [
-        "type:drupal-profile"
-      ],
-      "web/themes/contrib/{$name}": [
-        "type:drupal-theme"
-      ],
-      "drush/contrib/{$name}": [
-        "type:drupal-drush"
-      ]
+      "web/core": ["type:drupal-core"],
+      "web/modules/contrib/{$name}": ["type:drupal-module"],
+      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "web/themes/contrib/{$name}": ["type:drupal-theme"],
+      "drush/contrib/{$name}": ["type:drupal-drush"]
     },
     "patches": {
       "drupal/core": {

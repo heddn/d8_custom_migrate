@@ -1,0 +1,8 @@
+<div class="btn-group">
+	<button type="button" class="btn {{ buttonClass }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ cta }} {% if caret %}<span class="{{ caret }}"></span>{% endif %}</button>
+	<ul class="dropdown-menu">
+		{% for item in dropdownList %}
+		<li {% if item.separator %}role="separator"{% endif %} {% if item.listItemClass %} class="{{ item.listItemClass }}"{% endif %}><a href="{{ item.url }}">{{ item.text }}</a></li>
+		{% endfor %}
+	</ul>
+</div>

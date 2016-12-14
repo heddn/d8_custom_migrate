@@ -27,7 +27,7 @@ bootstrap-scripts:
 jquery-match-height:
   js:
     js/match_height.js: {}
-    vendor/matchHeight/jquery.matchHeight-min.js: {}
+    /libraries/matchHeight/jquery.matchHeight-min.js: {}
   dependencies:
     - core/drupal
     - core/jquery

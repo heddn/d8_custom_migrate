@@ -1,0 +1,15 @@
+<ul class="nav navbar-nav {{ navbarNavClass }}">
+  {% for item in navbarNav %}
+		<li {% if hasDropdown %}class="dropdown"{% endif %}{% if activeClass %}class="active" {% endif %}>
+			<a href="{{ item.url }}" {% if hasDropdown %}class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"{% endif %}>
+				{{ item.text }}{% if hasDropdown %}<span class="caret"></span>{% endif %}</a>
+			{% if hasDropdown %}
+				<ul class="dropdown-menu">
+					{% for menu in dropdownMenu %}
+						<li {% if menu.separator %}role="separator" class="divider"{% endif %}><a href="{{ menu.url }}">{{ menu.text }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>
