@@ -1,5 +1,6 @@
 # Generated files
-css
-bootstrap
-images
-js
+/css
+/bootstrap
+/images
+/js
+bower_components

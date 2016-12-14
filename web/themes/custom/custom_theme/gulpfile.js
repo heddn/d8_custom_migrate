@@ -1,4 +1,4 @@
-var promise = require('es6-promise');
+var promise      = require('es6-promise');
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 var postcss      = require('gulp-postcss');
@@ -15,13 +15,13 @@ var processors = [
   autoprefixer(autoprefixerOptions),
 ];
 // Source/destinations.
-var source = './source/';
+var source = './patternlab/source/';
 var input = source + 'sass/style.scss';
 var output = source + 'css';
-var bowerComponents = '../bower_components';
+var bowerComponents = 'bower_components';
 var patternlabLibraries = source + 'libraries';
-var drupalLibraries = '../web/libraries';
-var drupalTheme = '../web/themes/custom/custom_theme/';
+var drupalLibraries = '../../../libraries';
+var drupalTheme = './';
 var bootstrapLibrary = 'bootstrap';
 
 promise.polyfill();
@@ -100,7 +100,7 @@ gulp.task('imagesloaded', function() {
 gulp.task('jquery-colorbox', function() {
   return gulp.src(bowerComponents + '/jquery-colorbox/**/*.*', { base: bowerComponents + '/jquery-colorbox' })
     .pipe(gulp.dest(patternlabLibraries + '/colorbox'))
-    .pipe(gulp.dest(drupalLibraries));
+    .pipe(gulp.dest(drupalLibraries + '/colorbox'));
 });
 gulp.task('masonry', function() {
   return gulp.src(bowerComponents + '/masonry/**/*.*', { base: bowerComponents })
@@ -133,7 +133,7 @@ gulp.task('clean-pl-css', function() {
     .pipe(clean());
 });
 gulp.task('clean-drupal-css', function() {
-  return gulp.src(drupalTheme + output, {read: false})
+  return gulp.src(drupalTheme + output + '/style.css', {read: false})
     .pipe(clean({force: true}));
 });
 gulp.task('clean-pl-libraries', function() {
