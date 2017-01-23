@@ -60,6 +60,7 @@ $config['system.performance']['js']['preprocess'] = FALSE;
  */
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/default.services.yml';
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/services.local.yml';
 
 /**
  * Skip file system permissions hardening.
