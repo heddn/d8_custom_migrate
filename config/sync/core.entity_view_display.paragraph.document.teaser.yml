@@ -22,4 +22,5 @@ content:
       image_link: media
     third_party_settings: {  }
     type: media_thumbnail
-hidden: {  }
+hidden:
+  field_columns: true
