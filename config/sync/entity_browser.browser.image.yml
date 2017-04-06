@@ -43,6 +43,7 @@ widgets:
       view: media_browser
       view_display: entity_browser_1
       submit_text: 'Select entities'
+      auto_select: false
     uuid: 05fa3137-a235-4ce1-b553-1f3c9641bd79
     weight: 2
     label: 'Select existing'

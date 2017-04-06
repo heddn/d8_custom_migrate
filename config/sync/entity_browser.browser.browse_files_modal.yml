@@ -34,6 +34,7 @@ widgets:
       view: file_entity_browser
       view_display: entity_browser_1
       submit_text: 'Select entities'
+      auto_select: false
     uuid: a4ad947c-9669-497c-9988-24351955a02f
     weight: 1
     label: 'Files listing'

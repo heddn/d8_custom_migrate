@@ -67,6 +67,7 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  workflows: 0
   menu_link_content: 1
   views: 10
   paragraphs: 11
@@ -79,3 +80,4 @@ theme:
   custom_theme: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
+profile: config_installer

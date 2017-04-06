@@ -144,6 +144,11 @@
  * @code
  *   'prefix' => 'main_',
  * @endcode
+ *
+ * Per-table prefixes are deprecated as of Drupal 8.2, and will be removed in
+ * Drupal 9.0. After that, only a single prefix for all tables will be
+ * supported.
+ *
  * To provide prefixes for specific tables, set 'prefix' as an array.
  * The array's keys are the table names and the values are the prefixes.
  * The 'default' element is mandatory and holds the prefix for any tables
@@ -268,8 +273,13 @@ $config_directories = array(
  * by the user.
  *
  * @see install_select_profile()
+ *
+ * @deprecated in Drupal 8.3.0 and will be removed before Drupal 9.0.0. The
+ *   install profile is written to the core.extension configuration. If a
+ *   service requires the install profile use the 'install_profile' container
+ *   parameter. Functional code can use \Drupal::installProfile().
  */
-$settings['install_profile'] = 'config_installer';
+# $settings['install_profile'] = '';
 
 /**
  * Salt for one-time login links, cancel links, form tokens, etc.
@@ -288,7 +298,7 @@ $settings['install_profile'] = 'config_installer';
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'LoeYEgK5sFXmTS0lcJemr34EEXMXMkGl041We5fHvh63qF3I2CXzJpavxc99O4Lmx-NyTz8CsQ';
+$settings['hash_salt'] = 'GkNz3WqzPRBq9C-NJi7Cp0iZBg4S1dJ2ev28oedMWqWe6OjPqoX3zVkMSa0DR7tnqTXFKxvhcQ';
 
 /**
  * Deployment identifier.
@@ -766,3 +776,15 @@ if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
+$databases['default']['default'] = array (
+  'database' => 'drupal',
+  'username' => 'drupal',
+  'password' => 'drupal',
+  'prefix' => '',
+  'host' => '127.0.0.1',
+  'port' => '',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+
+$settings['install_profile'] = 'config_installer';

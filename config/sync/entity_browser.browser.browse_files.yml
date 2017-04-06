@@ -34,6 +34,7 @@ widgets:
       view: file_entity_browser
       view_display: entity_browser_1
       submit_text: 'Select entities'
+      auto_select: false
     uuid: a4ad947c-9669-497c-9988-24351955a02f
     weight: 1
     label: 'Files listing'
@@ -53,6 +54,8 @@ widgets:
     settings:
       upload_location: 'public://'
       submit_text: 'Select files'
+      multiple: true
+      extensions: 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'
     uuid: 7f85b117-e778-4b71-9af2-16894754a4f5
     weight: 3
     label: upload

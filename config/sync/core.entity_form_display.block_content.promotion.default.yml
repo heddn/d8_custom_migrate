@@ -9,7 +9,6 @@ dependencies:
     - field.field.block_content.promotion.field_link
     - field.field.block_content.promotion.field_media
   module:
-    - content_moderation
     - entity_browser
     - link
     - text
@@ -26,6 +25,7 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_link:
     weight: 8
     settings:
@@ -33,6 +33,7 @@ content:
       placeholder_title: 'Read more'
     third_party_settings: {  }
     type: link_default
+    region: content
   field_media:
     weight: 7
     settings:
@@ -46,6 +47,7 @@ content:
         view_mode: preview
     third_party_settings: {  }
     type: entity_browser_entity_reference
+    region: content
   info:
     type: string_textfield
     weight: -5
@@ -53,4 +55,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

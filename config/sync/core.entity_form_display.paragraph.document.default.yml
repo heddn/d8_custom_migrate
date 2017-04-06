@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.document.field_document
     - paragraphs.paragraphs_type.document
   module:
-    - content_moderation
     - entity_browser
 id: paragraph.document.default
 targetEntityType: paragraph
@@ -20,6 +19,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_document:
     weight: 6
     settings:
@@ -33,6 +33,7 @@ content:
         view_mode: default
     third_party_settings: {  }
     type: entity_browser_entity_reference
+    region: content
 hidden:
   created: true
   status: true

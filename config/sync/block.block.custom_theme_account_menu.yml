@@ -12,7 +12,7 @@ _core:
   default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
 id: custom_theme_account_menu
 theme: custom_theme
-region: '-1'
+region: navigation
 weight: -6
 provider: null
 plugin: 'system_menu_block:account'

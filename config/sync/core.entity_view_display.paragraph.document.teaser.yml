@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.teaser
+    - field.field.paragraph.document.field_columns
     - field.field.paragraph.document.field_document
     - image.style.medium
     - paragraphs.paragraphs_type.document
@@ -22,5 +23,6 @@ content:
       image_link: media
     third_party_settings: {  }
     type: media_thumbnail
+    region: content
 hidden:
   field_columns: true

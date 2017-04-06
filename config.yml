@@ -15,26 +15,57 @@ drupal_composer_dependencies: []
 # Set this to 'true' and 'build_makefile', 'build_composer' to 'false' if you
 # are using Composer's create-project as a site deployment strategy.
 build_composer_project: false
-drupal_composer_project_package: "drupal-composer/drupal-project:8.x-dev"
 drupal_composer_project_options: "--prefer-dist --stability dev --no-interaction -o"
 
 # Settings for installing a Drupal site if 'install_site:' is 'true'.
 drupal_major_version: 8
 drupal_domain: "{{ vagrant_hostname }}"
-drupal_site_name: Drupal
+drupal_site_name: "Drupal 8 Starter"
 drupal_install_profile: "config_installer"
 drupal_enable_modules: []
-drupal_account_name: admin
-drupal_account_pass: admin
 
 # Cron jobs are added to the vagrant user's crontab. Keys include name
 # (required), minute, hour, day, weekday, month, job (required), and state.
 drupalvm_cron_jobs:
- - {
-   name: "Drupal Cron",
-   minute: "*/30",
-   job: "drush -r {{ drupal_core_path }} core-cron"
- }
+  - {
+    name: "Drupal Cron",
+    minute: "*/30",
+    job: "drush -r {{ drupal_core_path }} core-cron"
+  }
+
+# Databases.
+drupal6_db_user: drupal6
+drupal6_db_password: drupal6
+drupal6_db_name: drupal6
+drupal7_db_user: drupal7
+drupal7_db_password: drupal7
+drupal7_db_name: drupal7
+
+# MySQL databases and users.
+mysql_databases:
+  - name: "{{ drupal_db_name }}"
+    encoding: utf8
+    collation: utf8_general_ci
+#  - name: "{{ drupal6_db_name }}"
+#    encoding: utf8
+#    collation: utf8_general_ci
+#  - name: "{{ drupal7_db_name }}"
+#    encoding: utf8
+#    collation: utf8_general_ci
+
+mysql_users:
+  - name: "{{ drupal_db_user }}"
+    host: "%"
+    password: "{{ drupal_db_password }}"
+    priv: "{{ drupal_db_name }}.*:ALL"
+#  - name: "{{ drupal6_db_user }}"
+#    host: "%"
+#    password: "{{ drupal6_db_password }}"
+#    priv: "{{ drupal6_db_name }}.*:ALL"
+#  - name: "{{ drupal7_db_user }}"
+#    host: "%"
+#    password: "{{ drupal7_db_password }}"
+#    priv: "{{ drupal7_db_name }}.*:ALL"
 
 # Comment out any extra utilities you don't want to install. If you don't want
 # to install *any* extras, make set this value to an empty set, e.g. `[]`.
@@ -59,7 +90,7 @@ installed_extras:
   - xdebug
   # - xhprof
 
-drush_version: "8.x"
+drush_version: "8.1.10"
 drush_keep_updated: true
 drush_composer_cli_options: "--prefer-dist --no-interaction -o --no-dev"
 
@@ -70,9 +101,8 @@ php_upload_max_filesize: "50M"
 php_post_max_size: "50M"
 php_output_buffering: "Off"
 
-# Run specified scripts before or after VM is provisioned. Path is relative to
-# the `provisioning/playbook.yml` file.
-pre_provision_scripts: []
+post_provision_scripts:
+  - "{{ config_dir }}/scripts/drupalvm/post-provision.sh"
 
 # MySQL Configuration.
 mysql_max_allowed_packet: 512M
@@ -80,3 +110,8 @@ mysql_max_allowed_packet: 512M
 # Node.js configuration (if enabled above).
 # Valid examples: "0.10", "0.12", "4.x", "5.x".
 nodejs_version: "4.x"
+nodejs_npm_global_packages:
+  - name: yarn
+
+# Other configuration.
+ssh_home: "{{ drupal_core_path }}"

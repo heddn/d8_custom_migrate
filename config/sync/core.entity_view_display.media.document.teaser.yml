@@ -21,6 +21,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    region: content
   thumbnail:
     type: image
     weight: 1
@@ -29,6 +30,7 @@ content:
       image_style: thumbnail
       image_link: content
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
   name: true

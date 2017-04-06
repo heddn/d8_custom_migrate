@@ -29,6 +29,7 @@ widgets:
       media_bundle: document
       upload_location: 'public://[date:custom:Y]-[date:custom:m]'
       submit_text: 'Select document'
+      multiple: true
     uuid: fce1eab5-27e8-4031-a904-bdcf1de46c15
     weight: 1
     label: 'Upload Document'
@@ -38,6 +39,7 @@ widgets:
       view: media_browser
       view_display: document_browser
       submit_text: 'Select document'
+      auto_select: false
     uuid: f3ad2c3f-70dc-43fa-84fe-db72066d2d60
     weight: 2
     label: 'Existing Documents'

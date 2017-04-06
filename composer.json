@@ -102,12 +102,12 @@
     },
     "patches": {
       "drupal/core": {
-        "Redirect to install.php on empty DB": "https://www.drupal.org/files/issues/728702-163.patch",
-        "Inline responsive image styles,etc": "https://www.drupal.org/files/issues/allow_image_style_to_be-2061377-224.patch",
-        "Categorize migrations according to their type": "https://www.drupal.org/files/issues/categorize_migrations-2711099-49.patch"
-      },
-      "drupal/config_installer": {
-        "config_installer_install_uninstalled_profile_dependencies() assumes too much": "https://www.drupal.org/files/issues/config_installer_2729243_2.patch"
+        "Inline responsive image styles,etc": "https://www.drupal.org/files/issues/2061377-241.patch"
+      }
+    },
+    "drupal-scaffold": {
+      "initial": {
+        "sites/default/default.settings.local.php": "sites/default/settings.local.php"
       }
     }
   }
