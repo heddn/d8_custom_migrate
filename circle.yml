@@ -33,9 +33,9 @@ dependencies:
         - echo "Size of cache archive:"; ls -lh ~/vendor-cache/$VENDOR_TAR
     override:
         - yarn:
-          pwd: web/themes/custom/custom_theme
+            pwd: web/themes/custom/custom_theme
         - yarn run gulp:
-          pwd: web/themes/custom/custom_theme
+            pwd: web/themes/custom/custom_theme
     # Cache composer.
     cache_directories:
         - "~/.composer/cache"
@@ -48,10 +48,10 @@ test:
 
         # Install Drupal.
         - ../vendor/bin/drush site-install --verbose --yes config_installer --db-url=${SIMPLETEST_DB}:
-          pwd: web
+            pwd: web
         - ../vendor/bin/drush runserver --dns localhost:8080 -:
-          pwd: web
-          background: true
+            pwd: web
+            background: true
 
         # Configure PhantomJS
         - mkdir -p /tmp/pjsdrivercache/phantomjs
@@ -62,12 +62,12 @@ test:
 
         # Run PhantomJS
         - phantomjs --ssl-protocol=any --ignore-ssl-errors=true ./vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768 2>&1 > /tmp/gastonjs.log:
-          background: true
+            background: true
 
         # Run Behat tests.
         - vendor/bin/behat --version
         - ../vendor/bin/behat:
-          pwd: test
+            pwd: test
 
 # Customize deployment commands
 # deployment:
