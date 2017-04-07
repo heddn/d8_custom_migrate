@@ -17,7 +17,7 @@ var processors = [
 // Source/destinations.
 var source = './patternlab/source/';
 var input = source + 'sass/style.scss';
-var output = source + 'css';
+var output = 'css';
 var bowerComponents = 'bower_components';
 var patternlabLibraries = source + 'libraries';
 var drupalLibraries = '../../../libraries';
@@ -34,7 +34,7 @@ gulp.task('prod', ['bower', 'assets'], function () {
       outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(postcss(processors))
-    .pipe(gulp.dest(output))
+    .pipe(gulp.dest(source + output))
     .pipe(gulp.dest(drupalTheme + output));
 });
 
@@ -48,7 +48,7 @@ gulp.task('dev', ['bower', 'assets'], function () {
     }).on('error', sass.logError))
     .pipe(postcss(processors))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(output))
+    .pipe(gulp.dest(source + output))
     .pipe(gulp.dest(drupalTheme + output));
 });
 
