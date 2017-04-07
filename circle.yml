@@ -33,7 +33,7 @@ dependencies:
     override:
         - yarn
             pwd: web/themes/custom/custom_theme:
-       - yarn run gulp
+       - yarn run gulp:
             pwd: web/themes/custom/custom_theme:
     # Cache composer.
     cache_directories:
