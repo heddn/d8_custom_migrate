@@ -22,7 +22,9 @@ machine:
 checkout:
     post:
         # Disable sendmail for local PHP for install.
-        - echo sendmail_path=`which true` >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/sendmail_disable.ini
+        - echo sendmail_path=`which true` >> /opt/circleci/php/$(phpenv version-name)/etc/conf.d/sendmail_disable.ini
+        # Disable xdebug.
+        - rm /opt/circleci/php/$(phpenv version-name)/etc/conf.d/xdebug.ini
 
 # Customize dependencies
 dependencies:
