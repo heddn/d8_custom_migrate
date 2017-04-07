@@ -30,11 +30,16 @@ dependencies:
         - if [[ -f ~/vendor-cache/${VENDOR_TAR} ]]; then echo "Deleting previous cache archive"; rm -fv ~/vendor-cache/$VENDOR_TAR; echo "Done"; else echo "No cache archive to delete"; fi
         - echo "Creating cache archive"; tar -cf ~/vendor-cache/$VENDOR_TAR ./vendor/; echo "Done"
         - echo "Size of cache archive:"; ls -lh ~/vendor-cache/$VENDOR_TAR
-
+    override:
+        - yarn
+            pwd: web/themes/custom/custom_theme:
+       - yarn run gulp
+            pwd: web/themes/custom/custom_theme:
     # Cache composer.
     cache_directories:
         - "~/.composer/cache"
         - "~/vendor-cache/"
+        - "~/.cache/yarn"
 test:
     pre:
         # Provide db connection string for Drupal installation.
@@ -46,7 +51,6 @@ test:
         - ../vendor/bin/drush runserver --dns localhost:8080 -:
             pwd: web
             background: true
-        - sleep 3
 
         # Configure PhantomJS
         - mkdir -p /tmp/pjsdrivercache/phantomjs
