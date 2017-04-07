@@ -3,11 +3,9 @@ machine:
     timezone:
         America/Los_Angeles
     php:
-        version:
-            7.0.4
+        version: 7.1.0
     node:
-        version:
-            4.5.0
+        version: 4.5.0
     environment:
         VENDOR_TAR: "vendor.tar"
         SIMPLETEST_DB: "sqlite://tmp/site.sqlite"
@@ -16,6 +14,9 @@ machine:
     # Override /etc/hosts
     hosts:
         localhost: 127.0.0.1
+
+    pre:
+        - mkdir ~/.yarn-cache
 
 # Customize checkout
 checkout:
@@ -34,6 +35,7 @@ dependencies:
         - if [[ -f ~/vendor-cache/${VENDOR_TAR} ]]; then echo "Deleting previous cache archive"; rm -fv ~/vendor-cache/$VENDOR_TAR; echo "Done"; else echo "No cache archive to delete"; fi
         - echo "Creating cache archive"; tar -cf ~/vendor-cache/$VENDOR_TAR ./vendor/; echo "Done"
         - echo "Size of cache archive:"; ls -lh ~/vendor-cache/$VENDOR_TAR
+        - curl -o- -L https://yarnpkg.com/install.sh | bash
     override:
         - yarn:
             pwd: web/themes/custom/custom_theme
