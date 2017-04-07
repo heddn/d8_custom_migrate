@@ -5,9 +5,8 @@ machine:
     php:
         version:
             7.0.4
+    node:
     yarn:
-        version:
-            0.18.1
     environment:
         VENDOR_TAR: "vendor.tar"
         SIMPLETEST_DB: "sqlite://tmp/site.sqlite"
