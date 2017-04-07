@@ -12,6 +12,7 @@ display_configuration:
   width: '650'
   height: '500'
   link_text: 'Select document'
+  auto_open: false
 selection_display: multi_step_display
 selection_display_configuration:
   entity_type: media_bundle
@@ -28,8 +29,8 @@ widgets:
       extensions: 'pdf txt doc docx xls xlsx'
       media_bundle: document
       upload_location: 'public://[date:custom:Y]-[date:custom:m]'
-      submit_text: 'Select document'
       multiple: true
+      submit_text: 'Select document'
     uuid: fce1eab5-27e8-4031-a904-bdcf1de46c15
     weight: 1
     label: 'Upload Document'

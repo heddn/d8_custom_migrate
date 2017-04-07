@@ -15,6 +15,7 @@ display_configuration:
   width: '650'
   height: '500'
   link_text: 'Select image(s)'
+  auto_open: false
 selection_display: multi_step_display
 selection_display_configuration:
   entity_type: media
@@ -34,6 +35,7 @@ widgets:
       max_filesize: 20M
       extensions: 'jpg jpeg gif png'
       submit_text: 'Select image'
+      auto_select: false
     uuid: c6b87414-2ca0-4d03-b09c-77c00fff480f
     weight: -10
     label: 'Upload image'
