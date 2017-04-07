@@ -6,7 +6,8 @@ machine:
         version:
             7.0.4
     node:
-    yarn:
+        version:
+            4.5.0
     environment:
         VENDOR_TAR: "vendor.tar"
         SIMPLETEST_DB: "sqlite://tmp/site.sqlite"
