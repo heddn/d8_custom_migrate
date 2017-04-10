@@ -1,0 +1,87 @@
+uuid: 5c12fdab-6767-485e-933c-fd17ed554b27
+langcode: en
+status: true
+dependencies:
+  enforced:
+    # List here the name of the module that provided this migration if you want
+    # this config to be removed when that module is uninstalled.
+    module:
+      - custom_migrate
+# The source data is in CSV files, so we use the 'csv' source plugin.
+id: migrate_csv
+label: CSV file migration
+migration_tags:
+  - CSV
+source:
+  plugin: csv
+  # Full path to the file.
+  path: /artifacts/people.csv
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  # These are the field names from the source file representing the key
+  # uniquely identifying each game - they will be stored in the migration
+  # map table as columns sourceid1, sourceid2, and sourceid3.
+  keys:
+    - id
+  # Here we identify the columns of interest in the source file. Each numeric
+  # key is the 0-based index of the column. For each column, the key below
+  # (e.g., "start_date") is the field name assigned to the data on import, to
+  # be used in field mappings below. The value is a user-friendly string for
+  # display by the migration UI.
+  column_names:
+    # So, here we're saying that the first field (index 0) on each line will
+    # be stored in the start_date field in the Row object during migration, and
+    # that name can be used to map the value below. "Date of game" will appear
+    # in the UI to describe this field.
+    0:
+      id: Identifier
+    1:
+      first_name: First Name
+    2:
+      last_name: Last Name
+    3:
+      email: Email Address
+    4:
+      country: Country
+    5:
+      ip_address: IP Address
+    6:
+      date_of_birth: Date of Birth
+process:
+  # The content (node) type we are creating is 'people'.
+  type:
+    plugin: default_value
+    default_value: people
+  # Most fields can be mapped directly - we just specify the destination (D8)
+  # field and the corresponding field name from above, and the values will be
+  # copied in.
+  title:
+    plugin: concat
+    source:
+      - first_name
+      - last_name
+    delimiter: ' '
+  field_first_name: first_name
+  field_last_name: last_name
+  field_email: email
+  field_country:
+    plugin: entity_generate
+    source: country
+  field_ip_address: ip_address
+  field_dob:
+    plugin: format_date
+    from_format: 'm/d/Y'
+    to_format: 'Y-m-d'
+    source: date_of_birth
+destination:
+  # Here we're saying that each row of data (line from the CSV file) will be
+  # used to create a node entity.
+  plugin: entity:node
+# List any optional or required migration dependencies.
+# Requried means that 100% of the content must be migrated
+# Optional means that that the other dependency should be run first but if there
+# are items from the dependant migration that were not successful, it will still
+# run the migration.
+migration_dependencies:
+  required: {}
+  optional: {}

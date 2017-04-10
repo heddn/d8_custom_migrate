@@ -1,0 +1,16 @@
+id,first_name,last_name,email,country,ip_address,date_of_birth
+1,Justin,Dean,jdean0@example.com,Indonesia,60.242.130.40,01/05/1955
+2,Joan,Jordan,jjordan1@example.com,Thailand,137.230.209.171,10/14/1958
+3,William,Ray,wray2@example.com,Germany,4.75.251.71,08/13/1962
+4,Jack,Collins,jcollins3@example.com,Indonesia,118.241.243.64,08/16/1977
+5,Jean,Moreno,jmoreno4@example.com,Portugal,12.24.215.20,10/18/1940
+6,Dennis,Mitchell,dmitchell5@example.com,Mexico,185.24.131.116,08/21/1999
+7,Harry,West,hwest6@example.com,Uzbekistan,101.74.110.171,10/05/1987
+8,Rebecca,Hunt,rhunt7@example.com,France,253.107.6.23,04/21/1922
+9,Rose,Rogers,rrogers8@example.com,China,21.2.126.228,08/14/2005
+10,Juan,Walker,jwalker9@example.com,Angola,192.118.77.225,03/09/1958
+11,Lois,Price,lpricea@example.com,Greece,231.185.100.19,04/08/1944
+12,Patricia,Bell,pbellb@example.com,Sweden,226.2.254.94,02/26/1950
+13,Gerald,Kelly,gkellyc@example.com,China,31.204.2.163,09/25/1948
+14,Kimberly,Jackson,kjacksond@example.com,Thailand,19.187.65.116,06/21/1926
+15,Jason,Mason,jmasone@example.com,Greece,225.129.68.203,10/01/1950
