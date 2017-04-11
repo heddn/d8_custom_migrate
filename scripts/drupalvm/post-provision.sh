@@ -10,8 +10,7 @@ else
 fi
 
 # Provide default settings for running locally.
-if [ ! -f ./web/sites/default/settings.local.php ]
-then
+if [ ! -f ./web/sites/default/settings.local.php ]; then
   cp ./scripts/seed/settings.local.php ./web/sites/default/
 fi
 
@@ -19,9 +18,18 @@ fi
 chmod 755 ./web/sites/default
 chmod 664 web/sites/default/settings.php
 
-cd web/themes/custom/custom_theme
-yarn install
-yarn run gulp
+if hash /home/vagrant/.npm-global/bin/yarn 2>/dev/null; then
+  YARN=/home/vagrant/.npm-global/bin/yarn
+elif hash yarn 2>/dev/null; then
+  YARN=$(which yarn)
+fi
+
+if $YARN; then
+  cd web/themes/custom/custom_theme
+  $YARN install
+  $YARN run gulp
+  cd -
+fi
 
 cd web
 ../vendor/bin/drush si config_installer -y
