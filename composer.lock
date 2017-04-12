@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "32f97969f33f80b27a8d0d2f8ca37b93",
+    "content-hash": "23e96defdbed9213f1ad5b143ad03e25",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1218,7 +1218,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/audiofield-8.x-1.0.zip",
-                "reference": null,
+                "reference": "8.x-1.0",
                 "shasum": "0006cc497774cc7a5cc335744119e7788b3eed0f"
             },
             "require": {
@@ -1269,7 +1269,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.3.zip",
-                "reference": null,
+                "reference": "8.x-3.3",
                 "shasum": "008a0c795bc4ad20987fa34a456524740030d77b"
             },
             "require": {
@@ -2927,25 +2927,20 @@
         },
         {
             "name": "drupal/migrate_plus",
-            "version": "3.0.0-beta1",
+            "version": "dev-3.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/migrate_plus",
-                "reference": "8.x-3.0-beta1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/migrate_plus-8.x-3.0-beta1.zip",
-                "reference": "8.x-3.0-beta1",
-                "shasum": "7bae5c758a432053863b7b19c94fc1b829debf00"
+                "reference": "9baf04f0c0e835e47e46d6396775b745ebd78548"
             },
             "require": {
                 "drupal/core": "^8.2"
             },
+            "require-dev": {
+                "drupal/migrate_example_advanced_setup": "*",
+                "drupal/migrate_example_setup": "*"
+            },
             "suggest": {
-                "drupal/core": "Required by drupal/migrate_example_advanced",
-                "drupal/migrate_example_advanced_setup": "Required by drupal/migrate_example_advanced",
-                "drupal/migrate_example_setup": "Required by drupal/migrate_example",
                 "sainsburys/guzzle-oauth2-plugin": "3.0 required for the OAuth2 authentication plugin"
             },
             "type": "drupal-module",
@@ -2954,8 +2949,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0-beta1",
-                    "datestamp": "1476307739"
+                    "version": "8.x-3.0-beta1+4-dev",
+                    "datestamp": "1480717983"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2967,6 +2962,10 @@
                     "name": "Mike Ryan",
                     "homepage": "https://www.drupal.org/u/mikeryan",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
                 }
             ],
             "description": "Enhancements to core migration support.",
@@ -2975,7 +2974,8 @@
                 "source": "https://cgit.drupalcode.org/migrate_plus",
                 "issues": "https://www.drupal.org/project/issues/migrate_plus",
                 "irc": "irc://irc.freenode.org/drupal-migrate"
-            }
+            },
+            "time": "2017-04-12 17:30:35"
         },
         {
             "name": "drupal/migrate_tools",
@@ -8843,6 +8843,7 @@
         "drupal/file_browser": 20,
         "drupal/inline_entity_form": 20,
         "drupal/media_entity_audio": 20,
+        "drupal/migrate_plus": 20,
         "drupal/paragraphs": 20,
         "drupal/simple_sitemap": 20,
         "drupal/smart_trim": 20,

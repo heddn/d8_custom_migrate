@@ -15,8 +15,8 @@ if [ ! -f ./web/sites/default/settings.local.php ]; then
 fi
 
 # Allow writing to settings.php
-chmod 755 ./web/sites/default
-chmod 664 web/sites/default/settings.php
+chmod 777 ./web/sites/default
+chmod 666 web/sites/default/settings.php
 
 if hash /home/vagrant/.npm-global/bin/yarn 2>/dev/null; then
   YARN=/home/vagrant/.npm-global/bin/yarn

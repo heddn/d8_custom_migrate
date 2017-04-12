@@ -35,7 +35,7 @@
     "drupal/media_entity_audio": "1.x-dev",
     "drupal/media_entity_document": "~1",
     "drupal/media_entity_image": "~1",
-    "drupal/migrate_plus": "~3",
+    "drupal/migrate_plus": "3.x-dev",
     "drupal/migrate_tools": "~3",
     "drupal/ng_lightbox": "~1",
     "drupal/paragraphs": "1.x-dev",
