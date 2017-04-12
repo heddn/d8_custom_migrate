@@ -34,9 +34,9 @@ So after running composer, you need to run vagrant.
 After vagrant, then the fun starts. Here's a small sample.
 
 ```
-drush @d8-custom-migrate.dev uli # Create a one-time login link.
-drush @d8-custom-migrate.dev mi --all # Migrate all the things.
-drush @d8-custom-migrate.dev ssh # SSH into the vagrant box.
+drush @d8starter.dev uli # Create a one-time login link.
+drush @d8starter.dev mi --all # Migrate all the things.
+drush @d8starter.dev ssh # SSH into the vagrant box.
 ```
 
 ## What does the composer template do?
