@@ -1,0 +1,17 @@
+uuid: 6d1f8b4f-844c-4bee-9940-f76e3a8cf6e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Person
+type: person
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

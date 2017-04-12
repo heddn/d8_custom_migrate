@@ -1,6 +1,3 @@
-uuid: 5c12fdab-6767-485e-933c-fd17ed554b27
-langcode: en
-status: true
 dependencies:
   enforced:
     # List here the name of the module that provided this migration if you want
@@ -8,8 +5,8 @@ dependencies:
     module:
       - custom_migrate
 # The source data is in CSV files, so we use the 'csv' source plugin.
-id: migrate_csv
-label: CSV file migration
+id: person_csv
+label: Person csv migration
 migration_tags:
   - CSV
 source:
@@ -47,41 +44,67 @@ source:
       ip_address: IP Address
     6:
       date_of_birth: Date of Birth
+    7:
+      filename: Profile photo
 process:
   # The content (node) type we are creating is 'people'.
   type:
     plugin: default_value
-    default_value: people
+    default_value: person
   # Most fields can be mapped directly - we just specify the destination (D8)
   # field and the corresponding field name from above, and the values will be
   # copied in.
   title:
-    plugin: concat
-    source:
-      - first_name
-      - last_name
-    delimiter: ' '
-  field_first_name: first_name
-  field_last_name: last_name
+    -
+      plugin: concat
+      source:
+        - first_name
+        - last_name
+      delimiter: ' '
+    -
+      plugin: substr
+      length: 255
+  field_first_name:
+    plugin: substr
+    length: 60
+    source: first_name
+  field_last_name:
+    plugin: substr
+    length: 60
+    source: last_name
   field_email: email
   field_country:
     plugin: entity_generate
     source: country
-  field_ip_address: ip_address
-  field_dob:
+  field_ip_address:
+    plugin: substr
+    length: 16
+    source: ip_address
+  field_date_of_birth:
     plugin: format_date
     from_format: 'm/d/Y'
     to_format: 'Y-m-d'
     source: date_of_birth
+  field_image/target_id:
+    plugin: migration
+    migration: person_file_csv
+    source: filename
+  field_image/alt:
+      plugin: concat
+      source:
+        - first_name
+        - last_name
+      delimiter: ' '
 destination:
   # Here we're saying that each row of data (line from the CSV file) will be
   # used to create a node entity.
   plugin: entity:node
 # List any optional or required migration dependencies.
-# Requried means that 100% of the content must be migrated
+# Required means that 100% of the content must be migrated
 # Optional means that that the other dependency should be run first but if there
 # are items from the dependant migration that were not successful, it will still
 # run the migration.
 migration_dependencies:
-  required: {}
+  required:
+    - person_file_csv
   optional: {}
