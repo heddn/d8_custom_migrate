@@ -27,5 +27,8 @@ function custom_migrate_help($route_name, RouteMatchInterface $route_match) {
  * Implements hook_migration_plugins_alter().
  */
 function custom_migrate_migration_plugins_alter(&$definitions) {
-  $definitions['migrate_csv']['source']['path'] = drupal_get_path('module', 'custom_migrate') . $definitions['migrate_csv']['source']['path'];
+  $modulePath = drupal_get_path('module', 'custom_migrate');
+  $definitions['person_csv']['source']['path'] = $modulePath . $definitions['person_csv']['source']['path'];
+  $definitions['person_file_csv']['source']['path'] = $modulePath . $definitions['person_file_csv']['source']['path'];
+  $definitions['person_file_csv']['source']['constants']['source_base_path'] = $modulePath . $definitions['person_file_csv']['source']['constants']['source_base_path'];
 }

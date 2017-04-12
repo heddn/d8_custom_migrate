@@ -1,9 +1,11 @@
+---
 machine:
     timezone:
         America/Los_Angeles
     php:
-        version:
-            7.0.4
+        version: 7.1.0
+    node:
+        version: 4.5.0
     environment:
         VENDOR_TAR: "vendor.tar"
         SIMPLETEST_DB: "sqlite://tmp/site.sqlite"
@@ -13,13 +15,18 @@ machine:
     hosts:
         localhost: 127.0.0.1
 
-## Customize checkout
+    pre:
+        - mkdir ~/.yarn-cache
+
+# Customize checkout
 checkout:
     post:
         # Disable sendmail for local PHP for install.
-        - echo sendmail_path=`which true` >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/sendmail_disable.ini
+        - echo sendmail_path=`which true` >> /opt/circleci/php/$(phpenv version-name)/etc/conf.d/sendmail_disable.ini
+        # Disable xdebug.
+        - rm /opt/circleci/php/$(phpenv version-name)/etc/conf.d/xdebug.ini
 
-## Customize dependencies
+# Customize dependencies
 dependencies:
     pre:
         # Run composer install and cache it.
@@ -30,11 +37,17 @@ dependencies:
         - if [[ -f ~/vendor-cache/${VENDOR_TAR} ]]; then echo "Deleting previous cache archive"; rm -fv ~/vendor-cache/$VENDOR_TAR; echo "Done"; else echo "No cache archive to delete"; fi
         - echo "Creating cache archive"; tar -cf ~/vendor-cache/$VENDOR_TAR ./vendor/; echo "Done"
         - echo "Size of cache archive:"; ls -lh ~/vendor-cache/$VENDOR_TAR
-
+        - curl -o- -L https://yarnpkg.com/install.sh | bash
+    override:
+        - yarn:
+            pwd: web/themes/custom/custom_theme
+        - yarn run gulp:
+            pwd: web/themes/custom/custom_theme
     # Cache composer.
     cache_directories:
         - "~/.composer/cache"
         - "~/vendor-cache/"
+        - "~/.cache/yarn"
 test:
     pre:
         # Provide db connection string for Drupal installation.
@@ -46,14 +59,13 @@ test:
         - ../vendor/bin/drush runserver --dns localhost:8080 -:
             pwd: web
             background: true
-        - sleep 3
 
         # Configure PhantomJS
         - mkdir -p /tmp/pjsdrivercache/phantomjs
     override:
         # Run phpunit tests.
         # Core phpunit takes too long...
-        #- ./vendor/bin/phpunit -c web/core --exclude-group Composer
+        # - ./vendor/bin/phpunit -c web/core --exclude-group Composer
 
         # Run PhantomJS
         - phantomjs --ssl-protocol=any --ignore-ssl-errors=true ./vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768 2>&1 > /tmp/gastonjs.log:
@@ -64,9 +76,9 @@ test:
         - ../vendor/bin/behat:
             pwd: test
 
-## Customize deployment commands
-#deployment:
-    #development:
-        #branch: master
-            #commands:
-                #- git push %git repo% ${CIRCLE_SHA1}:master
+# Customize deployment commands
+# deployment:
+    # development:
+        # branch: master
+            # commands:
+                # - git push %git repo% ${CIRCLE_SHA1}:master

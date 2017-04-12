@@ -1,0 +1,8 @@
+<!-- Media List -->
+<ul class="media-list">
+	{% for media in mediaList %}
+	<li>
+		{% include "organisms-media-object" with {'mediaLeft': media.mediaLeft, 'mediaRight': media.mediaRight} %}
+	</li>
+	{% endfor %}
+</ul>

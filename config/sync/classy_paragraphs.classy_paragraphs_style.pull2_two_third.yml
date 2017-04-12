@@ -1,0 +1,7 @@
+uuid: 997acd7c-7552-47fe-b160-bd35828542a7
+langcode: en
+status: true
+dependencies: {  }
+id: pull2_two_third
+label: 'Pull - Two third'
+classes: col-md-pull-8

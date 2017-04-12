@@ -1,0 +1,46 @@
+uuid: c8e02680-7c97-46e3-bc81-67f10d5908fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.promotion
+    - field.field.block_content.promotion.body
+    - field.field.block_content.promotion.field_link
+    - field.field.block_content.promotion.field_media
+  module:
+    - link
+    - text
+id: block_content.promotion.default
+targetEntityType: block_content
+bundle: promotion
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: null
+      rel: nofollow
+      url_only: false
+      url_plain: false
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_media:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden: {  }

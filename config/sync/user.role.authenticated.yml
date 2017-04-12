@@ -9,11 +9,11 @@ label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
-  - 'access content'
-  - 'use text format basic_html'
   - 'access comments'
-  - 'post comments'
-  - 'skip comment approval'
-  - 'access site-wide contact form'
+  - 'access content'
   - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'post comments'
   - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'

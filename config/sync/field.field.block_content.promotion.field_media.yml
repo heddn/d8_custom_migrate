@@ -1,0 +1,28 @@
+uuid: beb64a77-9c7f-426e-a4a4-834f3917f13e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.promotion
+    - field.storage.block_content.field_media
+    - media_entity.bundle.image
+id: block_content.promotion.field_media
+field_name: field_media
+entity_type: block_content
+bundle: promotion
+label: Media
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

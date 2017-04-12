@@ -1,0 +1,13 @@
+.DS_Store
+.idea
+export/*
+source/styleguide/*
+config/*.json
+
+# Generated files
+source/css/style.css
+node_modules
+source/bootstrap
+source/libraries
+vendor
+public

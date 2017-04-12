@@ -1,0 +1,12 @@
+<div class="panel {{panelClass}}">
+  {% if panelHeading %}
+    <div class="panel-heading">{{ panelHeading }}</h3></div>
+	{% endif %}
+	<div class="panel-body">
+		{{ text }}
+	</div>
+  {% if panelFooter %}
+    <div class="panel-footer">{{ panelFooter}}</div>
+	{% endif %}
+</div>
+

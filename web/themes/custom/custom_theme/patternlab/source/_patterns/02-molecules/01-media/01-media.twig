@@ -1,0 +1,20 @@
+<div class="media">
+	{% if mediaLeft %}
+    <div class="media-left {{ mediaClass }}">
+        <a href="{{ url }}">
+        	<img class="media-object" src="{{ mediaImage }}" alt="{{ alt }}">
+        </a>
+    </div>
+    {% endif %}
+	<div class="media-body">
+	  	<h4 class="media-heading">{{ heading }}</h4>
+        {{ text }}
+	</div>
+	{% if mediaRight %}
+    <div class="media-right {{ mediaClass }}">
+        <a href="{{ url }}">
+        	<img class="media-object" src="{{ mediaImage }}" alt="{{ alt }}">
+        </a>
+    </div>
+    {% endif %}
+</div>

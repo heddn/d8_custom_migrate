@@ -1,0 +1,65 @@
+dependencies:
+  enforced:
+    # List here the name of the module that provided this migration if you want
+    # this config to be removed when that module is uninstalled.
+    module:
+      - custom_migrate
+# The source data is in CSV files, so we use the 'csv' source plugin.
+id: person_file_csv
+label: Person file csv migration
+migration_tags:
+  - CSV
+source:
+  plugin: csv
+  # Full path to the file.
+  path: /artifacts/people.csv
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  # These are the field names from the source file representing the key
+  # uniquely identifying each game - they will be stored in the migration
+  # map table as columns sourceid1, sourceid2, and sourceid3.
+  keys:
+    - filename
+  column_names:
+    7:
+      filename: Profile photo
+  constants:
+    source_base_path: /artifacts/photos
+    destination: 'public://photos'
+process:
+  source_full_path:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/source_base_path
+        - filename
+    -
+      plugin: urlencode
+  destination:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/destination
+        - filename
+    -
+      plugin: urlencode
+  filename: filename
+  uri:
+    plugin: file_copy
+    source:
+      - '@source_full_path'
+      - '@destination'
+destination:
+  # Here we're saying that each row of data (line from the CSV file) will be
+  # used to create a file entity.
+  plugin: entity:file
+# List any optional or required migration dependencies.
+# Required means that 100% of the content must be migrated
+# Optional means that that the other dependency should be run first but if there
+# are items from the dependant migration that were not successful, it will still
+# run the migration.
+migration_dependencies:
+  required: {}
+  optional: {}

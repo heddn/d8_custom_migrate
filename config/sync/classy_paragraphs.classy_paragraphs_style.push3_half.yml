@@ -1,0 +1,7 @@
+uuid: 542296de-a83d-466e-8566-66a36740cd4f
+langcode: en
+status: true
+dependencies: {  }
+id: push3_half
+label: 'Push - Half'
+classes: col-md-push-6

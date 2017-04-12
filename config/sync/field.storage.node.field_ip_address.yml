@@ -1,4 +1,4 @@
-uuid: ef9fb4fb-847e-4303-b3c8-5316317d594a
+uuid: 2d9249c2-801b-43f7-8d77-aa41ecd1fd9b
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ field_name: field_ip_address
 entity_type: node
 type: string
 settings:
-  max_length: 255
+  max_length: 16
   is_ascii: false
   case_sensitive: false
 module: core

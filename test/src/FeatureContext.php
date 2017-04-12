@@ -33,10 +33,10 @@ class FeatureContext extends DrupalContext implements SnippetAcceptingContext {
       }
       $baseUrl = $this->getMinkParameter('base_url');
       $fileName = date('d-m-y') . '-' . uniqid() . '.png';
-      $filePath = $this->getContainer()->get('kernel')->getRootdir() . '/../web/tmp/';
+      $filePath = $this->getContainer()->get('kernel')->getRootdir() . '/../web/sites/default/files/';
 
       $this->saveScreenshot($fileName, $filePath);
-      print 'Screenshot at: ' . $baseUrl . 'tmp/' . $fileName;
+      print 'Screenshot at: ' . $baseUrl . 'sites/default/files/' . $fileName;
 
       $this->iPutABreakpoint();
     }

@@ -1,0 +1,33 @@
+uuid: 11c394d9-b568-4031-b599-1b69b326761e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.document.field_media
+    - media_entity.bundle.document
+  module:
+    - file
+id: media.document.default
+targetEntityType: media
+bundle: document
+mode: default
+content:
+  field_media:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  thumbnail: true
+  uid: true

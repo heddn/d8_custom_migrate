@@ -1,0 +1,63 @@
+uuid: 8b83fbbc-af92-4747-be2e-64abd589210c
+langcode: und
+status: true
+dependencies:
+  enforced:
+    module:
+      - file_browser
+  module:
+    - dropzonejs_eb_widget
+    - views
+_core:
+  default_config_hash: 1Y-fC4LxFu8Rg3SCSaYMZMXRAvMtueQ3JQIiKuna8hM
+name: browse_files
+label: 'Browser for files'
+display: modal
+display_configuration:
+  width: ''
+  height: '768'
+  link_text: 'Select files'
+  auto_open: true
+selection_display: multi_step_display
+selection_display_configuration:
+  entity_type: media
+  display: label
+  display_settings:
+    image_style: file_entity_browser_small
+  select_text: 'Use selected'
+  selection_hidden: true
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  a4ad947c-9669-497c-9988-24351955a02f:
+    settings:
+      view: file_entity_browser
+      view_display: entity_browser_1
+      submit_text: 'Select entities'
+      auto_select: false
+    uuid: a4ad947c-9669-497c-9988-24351955a02f
+    weight: 1
+    label: 'Files listing'
+    id: view
+  735d146c-a4b2-4327-a057-d109e0905e05:
+    settings:
+      upload_location: 'public://'
+      dropzone_description: 'Click or drop files here to upload them'
+      max_filesize: 50M
+      extensions: 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'
+      submit_text: 'Select entities'
+      auto_select: false
+    uuid: 735d146c-a4b2-4327-a057-d109e0905e05
+    weight: 0
+    label: 'Upload files'
+    id: dropzonejs
+  7f85b117-e778-4b71-9af2-16894754a4f5:
+    settings:
+      upload_location: 'public://'
+      multiple: true
+      submit_text: 'Select files'
+      extensions: 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'
+    uuid: 7f85b117-e778-4b71-9af2-16894754a4f5
+    weight: 3
+    label: upload
+    id: upload

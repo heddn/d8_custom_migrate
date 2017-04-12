@@ -1,0 +1,7 @@
+uuid: 8d76b2b7-c535-4370-8fab-4b0f3827e2b5
+langcode: en
+status: true
+dependencies: {  }
+id: pull1_three_fourth
+label: 'Pull - Three fourth'
+classes: col-md-pull-9

@@ -1,0 +1,40 @@
+uuid: 1ca0fe84-e507-41d8-84ff-cdf4cf473379
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.document
+    - field.field.paragraph.document.field_columns
+    - field.field.paragraph.document.field_document
+    - paragraphs.paragraphs_type.document
+  module:
+    - entity_browser
+id: paragraph.document.default
+targetEntityType: paragraph
+bundle: document
+mode: default
+content:
+  field_columns:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_document:
+    weight: 6
+    settings:
+      entity_browser: document
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

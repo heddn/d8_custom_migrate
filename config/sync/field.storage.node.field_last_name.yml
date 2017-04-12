@@ -1,4 +1,4 @@
-uuid: ebcadcff-ea2b-4be7-a490-a6627058865c
+uuid: dd2dcbaf-ec99-484e-9860-3b1553227b6f
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ field_name: field_last_name
 entity_type: node
 type: string
 settings:
-  max_length: 255
+  max_length: 60
   is_ascii: false
   case_sensitive: false
 module: core

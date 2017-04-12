@@ -1,0 +1,15 @@
+uuid: a58f7c2f-bd3e-4c79-b941-36e24049d99b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity_document
+id: document
+label: Document
+description: ''
+type: document
+queue_thumbnail_downloads: false
+new_revision: true
+type_configuration:
+  source_field: field_media
+field_map: {  }
