@@ -6,6 +6,7 @@ dependencies:
     module:
       - custom_migrate
 id: migrate_csv
+class: null
 migration_tags:
   - CSV
 migration_group: null
